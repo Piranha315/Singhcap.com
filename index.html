@@ -401,7 +401,7 @@
 
   <!-- Slide 1 -->
   <div class="carousel-slide active" data-index="0">
-    <video class="slide-bg" autoplay muted playsinline src="Rocket_Landing.mp4"></video>
+    <video class="slide-bg" autoplay muted playsinline preload="none" src="Rocket_Landing.mp4"></video>
     <div class="slide-overlay"></div><div class="slide-grain"></div>
     <div class="slide-content">
       <span class="slide-eyebrow">Singh Capital Partners</span>
@@ -418,7 +418,7 @@
 
   <!-- Slide 2 -->
   <div class="carousel-slide" data-index="1">
-    <video class="slide-bg" muted playsinline src="Real Estate.mp4"></video>
+    <video class="slide-bg" muted playsinline preload="none" src="Real Estate.mp4"></video>
     <div class="slide-overlay"></div><div class="slide-grain"></div>
     <div class="slide-content">
       <span class="slide-eyebrow">Singh Capital Partners</span>
@@ -435,7 +435,7 @@
 
   <!-- Slide 3 -->
   <div class="carousel-slide" data-index="2">
-    <video class="slide-bg" muted playsinline src="America.mp4"></video>
+    <video class="slide-bg" muted playsinline preload="none" src="America.mp4"></video>
     <div class="slide-overlay"></div><div class="slide-grain"></div>
     <div class="slide-content">
       <span class="slide-eyebrow">Singh Capital Partners</span>
@@ -739,9 +739,15 @@
   cRafId = requestAnimationFrame(tick);
 
   /* ── Loader ── */
-  window.addEventListener('load', () => {
-    setTimeout(() => { document.getElementById('loader').classList.add('out'); setTimeout(() => document.getElementById('loader').remove(), 900); }, 1800);
-  });
+  function dismissLoader() {
+    const l = document.getElementById('loader');
+    if (l && !l.classList.contains('out')) {
+      l.classList.add('out');
+      setTimeout(() => { if (l.parentNode) l.remove(); }, 900);
+    }
+  }
+  document.addEventListener('DOMContentLoaded', () => setTimeout(dismissLoader, 1800));
+  window.addEventListener('load', dismissLoader); // also catch if load fires first
 
   /* ── Nav scroll ── */
   const nav = document.getElementById('nav');
