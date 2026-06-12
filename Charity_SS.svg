@@ -1,0 +1,281 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1504 1376" width="1504" height="1376">
+  <defs>
+    <!-- Sky gradient: deep indigo at top to warm amber at horizon -->
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#0d1b3e"/>
+      <stop offset="45%"  stop-color="#1a2e6e"/>
+      <stop offset="72%"  stop-color="#c2612a"/>
+      <stop offset="88%"  stop-color="#e8932d"/>
+      <stop offset="100%" stop-color="#f5c84a"/>
+    </linearGradient>
+
+    <!-- Ground gradient -->
+    <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"  stop-color="#0a1525"/>
+      <stop offset="100%" stop-color="#060d18"/>
+    </linearGradient>
+
+    <!-- Orb glow: warm light radiating outward -->
+    <radialGradient id="orbGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"   stop-color="#fff8e7" stop-opacity="1"/>
+      <stop offset="20%"  stop-color="#ffe566" stop-opacity="0.95"/>
+      <stop offset="55%"  stop-color="#f59e0b" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#c2612a"  stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Large ambient glow behind hands -->
+    <radialGradient id="ambientGlow" cx="50%" cy="38%" r="38%">
+      <stop offset="0%"   stop-color="#f59e0b" stop-opacity="0.35"/>
+      <stop offset="60%"  stop-color="#c2612a" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#0d1b3e" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Hands silhouette gradient (dark with slight warm rim) -->
+    <linearGradient id="handFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#1c2d4a"/>
+      <stop offset="100%" stop-color="#080f1d"/>
+    </linearGradient>
+
+    <!-- Rim light on hands -->
+    <radialGradient id="rimLight" cx="50%" cy="0%" r="80%">
+      <stop offset="0%"   stop-color="#f59e0b" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#f59e0b" stop-opacity="0"/>
+    </radialGradient>
+
+    <filter id="glowBlur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="28"/>
+    </filter>
+    <filter id="softBlur" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+    <filter id="tinyBlur">
+      <feGaussianBlur stdDeviation="1.5"/>
+    </filter>
+  </defs>
+
+  <!-- ── Background sky ── -->
+  <rect width="1504" height="1376" fill="url(#sky)"/>
+
+  <!-- ── Stars (upper portion) ── -->
+  <g fill="#ffffff" opacity="0.7">
+    <circle cx="112"  cy="58"  r="1.2"/>
+    <circle cx="230"  cy="32"  r="0.9"/>
+    <circle cx="310"  cy="95"  r="1.4"/>
+    <circle cx="490"  cy="44"  r="0.8"/>
+    <circle cx="600"  cy="18"  r="1.1"/>
+    <circle cx="710"  cy="72"  r="1.3"/>
+    <circle cx="820"  cy="30"  r="0.8"/>
+    <circle cx="930"  cy="55"  r="1.2"/>
+    <circle cx="1050" cy="20"  r="0.9"/>
+    <circle cx="1160" cy="80"  r="1.4"/>
+    <circle cx="1280" cy="42"  r="1.0"/>
+    <circle cx="1390" cy="64"  r="1.2"/>
+    <circle cx="168"  cy="148" r="0.8"/>
+    <circle cx="380"  cy="130" r="1.0"/>
+    <circle cx="540"  cy="168" r="0.7"/>
+    <circle cx="680"  cy="108" r="1.1"/>
+    <circle cx="800"  cy="150" r="0.9"/>
+    <circle cx="940"  cy="120" r="1.3"/>
+    <circle cx="1100" cy="155" r="0.8"/>
+    <circle cx="1240" cy="105" r="1.0"/>
+    <circle cx="1420" cy="138" r="0.9"/>
+    <circle cx="60"   cy="220" r="0.7"/>
+    <circle cx="270"  cy="245" r="1.0"/>
+    <circle cx="450"  cy="210" r="0.8"/>
+    <circle cx="630"  cy="255" r="1.1"/>
+    <circle cx="760"  cy="200" r="0.7"/>
+    <circle cx="1020" cy="240" r="1.0"/>
+    <circle cx="1200" cy="215" r="0.8"/>
+    <circle cx="1350" cy="260" r="0.9"/>
+    <circle cx="88"   cy="310" r="0.9"/>
+    <circle cx="340"  cy="290" r="0.7"/>
+    <circle cx="560"  cy="330" r="1.0"/>
+    <circle cx="750"  cy="305" r="0.8"/>
+    <circle cx="880"  cy="280" r="1.2"/>
+    <circle cx="1080" cy="320" r="0.7"/>
+    <circle cx="1300" cy="295" r="0.9"/>
+  </g>
+
+  <!-- ── Distant horizon glow (sunrise) ── -->
+  <ellipse cx="752" cy="820" rx="600" ry="200" fill="#f59e0b" opacity="0.18" filter="url(#glowBlur)"/>
+  <ellipse cx="752" cy="840" rx="380" ry="120" fill="#ffe566" opacity="0.14" filter="url(#glowBlur)"/>
+
+  <!-- ── Ground / earth (dark silhouette at bottom) ── -->
+  <rect x="0" y="1060" width="1504" height="316" fill="url(#ground)"/>
+  <!-- Gentle rolling horizon line -->
+  <path d="M0,1068 Q180,1045 350,1062 Q520,1078 700,1055 Q880,1032 1050,1060 Q1220,1086 1504,1058 L1504,1376 L0,1376 Z" fill="#060d18"/>
+
+  <!-- ── Ambient glow behind orb / hands ── -->
+  <ellipse cx="752" cy="820" rx="520" ry="320" fill="url(#ambientGlow)"/>
+
+  <!-- ── Orb glow halo (large, blurred) ── -->
+  <circle cx="752" cy="736" r="220" fill="url(#orbGlow)" filter="url(#glowBlur)" opacity="0.9"/>
+  <!-- medium halo -->
+  <circle cx="752" cy="736" r="110" fill="#fff8e7" filter="url(#softBlur)" opacity="0.55"/>
+
+  <!-- ── Light rays emanating from orb ── -->
+  <g opacity="0.18" filter="url(#glowBlur)">
+    <!-- vertical -->
+    <rect x="748" y="440" width="8" height="260" rx="4" fill="#ffe566"/>
+    <!-- angled rays -->
+    <rect x="748" y="440" width="6" height="240" rx="3" fill="#ffe566" transform="rotate(25 752 736)"/>
+    <rect x="748" y="440" width="6" height="240" rx="3" fill="#ffe566" transform="rotate(-25 752 736)"/>
+    <rect x="748" y="440" width="5" height="200" rx="3" fill="#ffe566" transform="rotate(50 752 736)"/>
+    <rect x="748" y="440" width="5" height="200" rx="3" fill="#ffe566" transform="rotate(-50 752 736)"/>
+    <rect x="748" y="440" width="4" height="170" rx="2" fill="#ffe566" transform="rotate(75 752 736)"/>
+    <rect x="748" y="440" width="4" height="170" rx="2" fill="#ffe566" transform="rotate(-75 752 736)"/>
+  </g>
+
+  <!-- ── Orb core ── -->
+  <circle cx="752" cy="736" r="52" fill="#fff8e7" opacity="0.95"/>
+  <circle cx="752" cy="736" r="38" fill="#ffffff" opacity="1"/>
+  <!-- inner sparkle -->
+  <circle cx="740" cy="724" r="8" fill="#ffffff" opacity="0.6"/>
+
+  <!-- ══════════════════════════════════════════
+       CUPPED HANDS SILHOUETTE
+       Two open palms curving inward, cradling
+       the orb from below.  Drawn as a single
+       unified dark shape with finger detail.
+  ══════════════════════════════════════════ -->
+
+  <!-- Left hand -->
+  <path d="
+    M 320 1060
+    C 320 1060 340 980 360 940
+    C 375 908 390 890 400 878
+
+    L 392 872
+    C 380 862 362 848 355 828
+    C 348 808 358 790 374 786
+    C 388 782 402 796 412 812
+
+    L 418 822
+    C 418 808 420 784 424 766
+    C 428 748 440 734 456 734
+    C 472 734 482 748 482 766
+    C 482 782 480 808 480 820
+
+    L 484 810
+    C 486 792 492 770 500 756
+    C 508 742 522 734 536 736
+    C 550 738 560 752 560 768
+    C 560 784 556 806 554 820
+
+    L 558 810
+    C 562 792 570 772 580 760
+    C 590 748 604 742 616 746
+    C 628 750 634 764 632 780
+    C 630 796 624 816 620 830
+
+    L 624 824
+    C 628 808 636 792 648 782
+    C 658 774 670 772 678 778
+    C 688 786 690 800 686 816
+    C 682 832 672 850 660 866
+    C 648 882 632 900 618 918
+
+    C 600 940 580 965 565 990
+    C 548 1018 538 1048 532 1060
+    Z
+  " fill="url(#handFill)"/>
+
+  <!-- Right hand -->
+  <path d="
+    M 1184 1060
+    C 1184 1060 1164 980 1144 940
+    C 1129 908 1114 890 1104 878
+
+    L 1112 872
+    C 1124 862 1142 848 1149 828
+    C 1156 808 1146 790 1130 786
+    C 1116 782 1102 796 1092 812
+
+    L 1086 822
+    C 1086 808 1084 784 1080 766
+    C 1076 748 1064 734 1048 734
+    C 1032 734 1022 748 1022 766
+    C 1022 782 1024 808 1024 820
+
+    L 1020 810
+    C 1018 792 1012 770 1004 756
+    C 996  742 982  734 968  736
+    C 954  738 944  752 944  768
+    C 944  784 948  806 950  820
+
+    L 946 810
+    C 942 792 934 772 924 760
+    C 914 748 900 742 888 746
+    C 876 750 870 764 872 780
+    C 874 796 880 816 884 830
+
+    L 880 824
+    C 876 808 868 792 856 782
+    C 846 774 834 772 826 778
+    C 816 786 814 800 818 816
+    C 822 832 832 850 844 866
+    C 856 882 872 900 886 918
+
+    C 904 940 924 965 939 990
+    C 956 1018 966 1048 972 1060
+    Z
+  " fill="url(#handFill)"/>
+
+  <!-- Palm / wrist connection underneath both hands -->
+  <path d="
+    M 532 1060
+    C 538 1028 560 988 590 960
+    C 630 924 680 906 752 904
+    C 824 906 874 924 914 960
+    C 944 988 966 1028 972 1060
+    Z
+  " fill="url(#handFill)"/>
+
+  <!-- Rim light overlay on hands (subtle warm glow where orb light hits) -->
+  <path d="
+    M 320 1060
+    C 320 1060 340 980 360 940
+    C 375 908 390 890 400 878
+    L 392 872 C 380 862 362 848 355 828 C 348 808 358 790 374 786
+    C 388 782 402 796 412 812 L 418 822
+    C 418 808 420 784 424 766 C 428 748 440 734 456 734
+    C 472 734 482 748 482 766 C 482 782 480 808 480 820 L 484 810
+    C 486 792 492 770 500 756 C 508 742 522 734 536 736
+    C 550 738 560 752 560 768 C 560 784 556 806 554 820 L 558 810
+    C 562 792 570 772 580 760 C 590 748 604 742 616 746
+    C 628 750 634 764 632 780 C 630 796 624 816 620 830 L 624 824
+    C 628 808 636 792 648 782 C 658 774 670 772 678 778
+    C 688 786 690 800 686 816 C 682 832 672 850 660 866
+    C 648 882 632 900 618 918
+    C 600 940 580 965 565 990 C 548 1018 538 1048 532 1060
+    C 538 1028 560 988 590 960 C 630 924 680 906 752 904
+    C 824 906 874 924 914 960 C 944 988 966 1028 972 1060
+    C 966 1048 956 1018 939 990 C 924 965 904 940 886 918
+    C 872 900 856 882 844 866 C 832 850 822 832 818 816
+    C 814 800 816 786 826 778 C 834 772 846 774 856 782
+    C 868 792 876 808 880 824 L 884 830
+    C 880 816 874 796 872 780 C 870 764 876 750 888 746
+    C 900 742 914 748 924 760 C 934 772 942 792 946 810 L 950 820
+    C 948 806 944 784 944 768 C 944 752 954 738 968 736
+    C 982 734 996 742 1004 756 C 1012 770 1018 792 1020 810 L 1024 820
+    C 1024 808 1022 782 1022 766 C 1022 748 1032 734 1048 734
+    C 1064 734 1076 748 1080 766 C 1084 784 1086 808 1086 822 L 1092 812
+    C 1102 796 1116 782 1130 786 C 1146 790 1156 808 1149 828
+    C 1142 848 1124 862 1112 872 L 1104 878
+    C 1114 890 1129 908 1144 940 C 1164 980 1184 1060 1184 1060 Z
+  " fill="url(#rimLight)" opacity="0.5"/>
+
+  <!-- ── Floating light particles ── -->
+  <g fill="#ffe566" opacity="0.8">
+    <circle cx="620" cy="620" r="3"  filter="url(#tinyBlur)"/>
+    <circle cx="700" cy="580" r="2"  filter="url(#tinyBlur)"/>
+    <circle cx="752" cy="555" r="2.5" filter="url(#tinyBlur)"/>
+    <circle cx="810" cy="600" r="2"  filter="url(#tinyBlur)"/>
+    <circle cx="870" cy="650" r="3"  filter="url(#tinyBlur)"/>
+    <circle cx="650" cy="680" r="2"  filter="url(#tinyBlur)"/>
+    <circle cx="580" cy="700" r="1.5" filter="url(#tinyBlur)"/>
+    <circle cx="920" cy="690" r="2"  filter="url(#tinyBlur)"/>
+    <circle cx="770" cy="510" r="1.5" filter="url(#tinyBlur)"/>
+    <circle cx="730" cy="500" r="2"  filter="url(#tinyBlur)"/>
+  </g>
+</svg>
