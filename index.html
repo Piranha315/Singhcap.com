@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Singh Capital Partners — Intelligent Capital. Enduring Impact.</title>
   <link rel="icon" type="image/x-icon" href="imgs/favicon.png">
+  <meta property="og:image" content="https://singhcap.com/imgs/single_logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -31,7 +32,7 @@
     body { font-family: var(--sans); background: var(--cream); color: var(--ink); line-height: 1.6; overflow-x: hidden; }
 
     /* ─── Intro Loader ─── */
-    #loader { position: fixed; inset: 0; background: #0C0B09; display: flex; align-items: center; justify-content: center; z-index: 9999; transition: opacity 0.8s var(--ease); }
+    #loader { position: fixed; inset: 0; background: #F8F6F1; display: flex; align-items: center; justify-content: center; z-index: 9999; transition: opacity 0.8s var(--ease); }
     #loader.out { opacity: 0; pointer-events: none; }
     #loader img { width: 200px; opacity: 0; animation: loaderPulse 1.8s var(--ease) forwards; }
     @keyframes loaderPulse {
@@ -401,7 +402,7 @@
 
   <!-- Slide 1 -->
   <div class="carousel-slide active" data-index="0">
-    <video class="slide-bg" autoplay muted playsinline preload="none" src="Rocket_Landing.mp4"></video>
+    <video class="slide-bg" autoplay muted playsinline src="Rocket_Landing.mp4"></video>
     <div class="slide-overlay"></div><div class="slide-grain"></div>
     <div class="slide-content">
       <span class="slide-eyebrow">Singh Capital Partners</span>
@@ -418,7 +419,7 @@
 
   <!-- Slide 2 -->
   <div class="carousel-slide" data-index="1">
-    <video class="slide-bg" muted playsinline preload="none" src="Real Estate.mp4"></video>
+    <video class="slide-bg" muted playsinline src="Data_Centers.mp4"></video>
     <div class="slide-overlay"></div><div class="slide-grain"></div>
     <div class="slide-content">
       <span class="slide-eyebrow">Singh Capital Partners</span>
@@ -427,7 +428,7 @@
           <img class="tagline-c-img" src="imgs/lion-c.png" alt="" />
           <span class="tagline-rest">reate</span>
         </div>
-        <em class="tagline-line2">A Space</em>
+        <em class="tagline-line2">Intelligence</em>
       </div>
       <a href="#" class="slide-learn-more">Learn More <svg class="lm-arrow" width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     </div>
@@ -435,33 +436,16 @@
 
   <!-- Slide 3 -->
   <div class="carousel-slide" data-index="2">
-    <video class="slide-bg" muted playsinline preload="none" src="America.mp4"></video>
+    <video class="slide-bg" muted playsinline src="America.mp4"></video>
     <div class="slide-overlay"></div><div class="slide-grain"></div>
     <div class="slide-content">
       <span class="slide-eyebrow">Singh Capital Partners</span>
       <div class="slide-tagline">
         <div class="tagline-line1">
           <img class="tagline-c-img" src="imgs/lion-c.png" alt="" />
-          <span class="tagline-rest">reate</span>
+          <span class="tagline-rest">reate the</span>
         </div>
-        <em class="tagline-line2">Strength</em>
-      </div>
-      <a href="#" class="slide-learn-more">Learn More <svg class="lm-arrow" width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-    </div>
-  </div>
-
-  <!-- Slide 4 -->
-  <div class="carousel-slide" data-index="3">
-    <img class="slide-bg" src="Charity_SS.jpg" alt="" style="object-position: center top;" />
-    <div class="slide-overlay"></div><div class="slide-grain"></div>
-    <div class="slide-content">
-      <span class="slide-eyebrow">Singh Capital Partners</span>
-      <div class="slide-tagline">
-        <div class="tagline-line1">
-          <img class="tagline-c-img" src="imgs/lion-c.png" alt="" />
-          <span class="tagline-rest">reate</span>
-        </div>
-        <em class="tagline-line2">Goodness</em>
+        <em class="tagline-line2">Change</em>
       </div>
       <a href="#" class="slide-learn-more">Learn More <svg class="lm-arrow" width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     </div>
@@ -480,7 +464,6 @@
     <button class="carousel-dot active" data-goto="0"><span class="carousel-dot-inner"></span></button>
     <button class="carousel-dot" data-goto="1"><span class="carousel-dot-inner"></span></button>
     <button class="carousel-dot" data-goto="2"><span class="carousel-dot-inner"></span></button>
-    <button class="carousel-dot" data-goto="3"><span class="carousel-dot-inner"></span></button>
   </div>
   <div class="carousel-progress"><div class="carousel-progress-fill" id="carouselProgress"></div></div>
 </div>
@@ -521,10 +504,7 @@
         </div>
       </div>
       <div class="approach-visual reveal">
-        <div class="approach-visual-placeholder">
-          <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><rect x="4" y="10" width="40" height="28" rx="2" stroke="currentColor" stroke-width="1.5"/><circle cx="16" cy="20" r="4" stroke="currentColor" stroke-width="1.5"/><path d="M4 34l10-8 8 6 8-8 14 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <span>Image or video</span>
-        </div>
+        <img src="ManhattanHenge.jpg" alt="New York City skyline at sunset" style="width:100%;height:100%;object-fit:cover;object-position:center;" />
       </div>
     </div><!-- /.approach-layout -->
   </div><!-- /.section-inner -->
@@ -701,7 +681,6 @@
     { link: '#' },
     { link: '#' },
     { link: '#' },
-    { link: '#' },
   ];
   const SLIDE_DURATION = 8000;
   let cSlide = 0, cRafId = null, cStart = null;
@@ -739,15 +718,9 @@
   cRafId = requestAnimationFrame(tick);
 
   /* ── Loader ── */
-  function dismissLoader() {
-    const l = document.getElementById('loader');
-    if (l && !l.classList.contains('out')) {
-      l.classList.add('out');
-      setTimeout(() => { if (l.parentNode) l.remove(); }, 900);
-    }
-  }
-  document.addEventListener('DOMContentLoaded', () => setTimeout(dismissLoader, 1800));
-  window.addEventListener('load', dismissLoader); // also catch if load fires first
+  window.addEventListener('load', () => {
+    setTimeout(() => { document.getElementById('loader').classList.add('out'); setTimeout(() => document.getElementById('loader').remove(), 900); }, 1800);
+  });
 
   /* ── Nav scroll ── */
   const nav = document.getElementById('nav');
