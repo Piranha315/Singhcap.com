@@ -1,0 +1,1860 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Singh Capital Partners - Intelligent Capital. Enduring Impact.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="imgs/favicon.png">
+  <meta property="og:image" content="https://singhcap.com/imgs/single_logo.png" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jacques+Francois&family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              charcoal: '#1C1C1E', ivory: '#F9F9F7', gold: '#C1A264', slate: '#6B6B6B', navy: '#0E2230'
+            },
+            fontFamily: {
+              //serif: ['Playfair Display', 'ui-serif', 'Georgia'],
+              serif: ['Manrope', 'ui-serif', 'Georgia'],
+              sans: ['Inter', 'ui-sans-serif', 'system-ui'],
+              lora: ['Lora', 'serif'],
+              montserrat: ['Montserrat', 'sans-serif'],
+              sansx: ['Tenor Sans', 'sans-serif']
+            },
+            borderRadius: { xl2: '1rem' }
+          }
+        }
+      }
+    </script>
+    <style> html { scroll-behavior: smooth; } </style>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-primary: #1A1A1A;
+            --color-secondary: #2D2D2D;
+            --color-accent: #8B7355;
+            --color-accent-light: #A89080;
+            --color-accent-dark: #6B5645;
+            --color-text: #1A1A1A;
+            --color-text-light: #5A5A5A;
+            --color-text-lighter: #8A8A8A;
+            --color-background: #FAF8F5;
+            --color-background-alt: #F5F2ED;
+            --color-background-cream: #FFFDF9;
+            --color-white: #FFFFFF;
+            --color-border: #E8E4DD;
+            --color-border-light: #F0EDE6;
+            
+            --font-display: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            
+            --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-fast: all 0.2s ease;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--color-text);
+            background: var(--color-background);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: var(--transition-smooth);
+        }
+
+        nav::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid transparent;
+            transition: var(--transition-smooth);
+        }
+
+        nav.scrolled::before {
+            border-bottom-color: var(--color-border);
+            box-shadow: 0 1px 10px rgba(0, 0, 0, 0.03);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0.5rem 3rem;
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+            position: relative;
+        }
+
+        nav.scrolled .nav-container {
+            padding: 0.5rem 3rem;
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+            transition: var(--transition-smooth);
+            position: relative;
+            grid-column: 2;
+            text-align: center;
+        }
+
+       
+
+        .nav-left {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            justify-self: start;
+        }
+
+        .nav-right {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            justify-self: end;
+        }
+
+        .nav-left a,
+        .nav-right a {
+            color: var(--color-text);
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+            letter-spacing: 0.01em;
+            transition: var(--transition-smooth);
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-left a::after,
+        .nav-right a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--color-accent);
+            transition: var(--transition-smooth);
+        }
+
+        .nav-left a:hover,
+        .nav-right a:hover {
+            color: var(--color-accent);
+        }
+
+        .nav-left a:hover::after,
+        .nav-right a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;            
+            width: 100%;
+            max-width: 100%;
+            align-items: center;
+            justify-content: center;
+            /*background: var(--color-background-cream);*/
+            position: relative;
+            padding: 80px 0px 20px 0px;
+            /*border-bottom: 1px solid var(--color-border);*/
+            border-bottom: 1px dotted #ccc;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: 60px;
+            font-weight: 400;
+            color:  #000;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+            /*
+            text-shadow:
+              -1px -1px 0 white,
+               1px -1px 0 white,
+              -1px  1px 0 white,
+               1px  1px 0 white,
+              -1px  0px 0 white,
+               1px  0px 0 white,
+               0px -1px 0 white,
+               0px  1px 0 white;
+            */
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding-top: 10px;
+        }
+
+        .stat-item {
+            text-align: center;
+            /*background: #ffffff91;*/
+            width: 150px;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .stat-number {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 200;
+            color: var(--color-primary);
+            display: block;
+            margin-bottom: 0.75rem;
+            line-height: 1;
+            letter-spacing: -0.02em;
+        }
+
+        .stat-label {
+            color: var(--color-text-light);
+            font-size: 0.875rem;
+            font-weight: 500;
+            line-height: 1.4;
+            letter-spacing: 0.01em;
+        }
+
+        .hero-visual {
+            display: none;
+        }
+
+        .hero-eyebrow {
+            display: none;
+        }
+
+        .hero-subtitle {
+            display: none;
+        }
+
+        .hero-cta {
+            display: none;
+        }
+
+        .hero-decoration {
+            display: none;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 3rem 3rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .section-header h2{
+           font-size: 50px;
+        }
+
+        .section-label {
+            color: var(--color-accent);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 500;
+            color: var(--color-primary);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+        }
+
+        .section-description {
+            font-size: 1.15rem;
+            color: var(--color-text-light);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+        
+        
+
+        /* Approach Grid */
+        .approach-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            align-items: start;
+            gap: 2rem;
+        }
+
+        .approach-card {
+            padding: 10px;
+            background: var(--color-white);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            transition: var(--transition-smooth);
+            cursor: pointer;
+            overflow: hidden;
+            align-self: start;
+        }
+        
+        .approach-card.expanded {
+            height: auto; 
+        }
+
+        .approach-card:hover {
+            border-color: var(--color-accent);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+        }
+
+        .approach-card.expanded {
+            border-color: var(--color-accent);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .approach-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .approach-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--color-primary);
+            margin: 0;
+            flex: 1;
+        }
+        
+        .approach-grid {
+            display: grid;
+            grid-template-columns: 1fr; /* mobile default */
+            gap: 2rem;
+        }
+        
+        /* Medium screens */
+        @media (min-width: 768px) {
+            .approach-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        /* Large screens */
+        @media (min-width: 1024px) {
+            .approach-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .expand-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--color-background);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--color-accent);
+            transition: var(--transition-smooth);
+            flex-shrink: 0;
+        }
+
+        .approach-card.expanded .expand-icon {
+            background: var(--color-accent);
+            color: var(--color-white);
+            transform: rotate(45deg);
+        }
+
+        .approach-card-content {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), 
+                        opacity 0.4s ease,
+                        margin-top 0.5s ease;
+        }
+
+        .approach-card.expanded .approach-card-content {
+            max-height: 500px;
+            opacity: 1;
+            margin-top: 1.5rem;
+        }
+
+        .approach-card p {
+            color: var(--color-text-light);
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        /* Portfolio Filter */
+        .portfolio-filter {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.75rem 1.75rem;
+            background: var(--color-white);
+            border: 2px solid var(--color-border);
+            border-radius: 50px;
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--color-text);
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .filter-btn:hover {
+            border-color: var(--color-accent);
+            color: var(--color-accent-dark);
+        }
+
+        .filter-btn.active {
+            background: var(--color-accent);
+            border-color: var(--color-accent);
+            color: var(--color-white);
+        }
+
+        /* Portfolio Grid */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .portfolio-item {
+            background: var(--color-white);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            transition: var(--transition-smooth);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .portfolio-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--color-accent);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: var(--transition-smooth);
+        }
+
+        .portfolio-item:hover::before {
+            transform: scaleX(1);
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+            border-color: var(--color-accent);
+        }
+
+        .portfolio-item img {
+            /*max-width: 120px;*/
+            width: 125px;
+            object-fit: contain;
+            margin-bottom: 1rem;
+            transition: var(--transition-fast);
+        }
+
+
+        .portfolio-item .company-name {
+            font-weight: 600;
+            color: var(--color-primary);
+            font-size: 0.95rem;
+            margin-top: 0.5rem;
+        }
+        
+        
+        .portfolio-item {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+        
+        /* Fixed logo container */
+        .company-name {
+          height: 80px;              /* controls vertical space */
+          display: flex;
+          align-items: center;       /* vertical center */
+          justify-content: center;   /* horizontal center */
+        }
+        
+        /* Logo styling */
+        .portfolio-item img {
+          width: 140px;
+          max-width: 140px;          /* same width for all */
+          max-height: 60px;          /* prevent tall logos breaking layout */
+          
+          object-fit: contain;
+          margin: 0;                 /* remove extra spacing */
+        }
+        
+        .portfolio-item .large {
+          width: 140px;          /* same width for all */ 
+        }
+
+        .portfolio-item .stage-tag {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: var(--color-background);
+            border-radius: 20px;
+            font-size: 0.75rem;
+            color: var(--color-text-light);
+            margin-top: 0.75rem;
+            font-weight: 500;
+        }
+
+        /* Real Estate Grid */
+        .real-estate-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .property-card {
+            background: var(--color-white);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: var(--transition-smooth);
+            border: 1px solid var(--color-border);
+        }
+
+        .property-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .property-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-primary) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-white);
+            font-size: 3rem;
+            font-family: var(--font-display);
+        }
+
+        .property-info {
+            padding: 2rem;
+        }
+
+        .property-type {
+            color: var(--color-accent);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .property-name {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--color-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .property-location {
+            color: var(--color-text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .contact-card {
+            background: var(--color-white);
+            padding: 3rem;
+            border-radius: 12px;
+            border: 1px solid var(--color-border);
+            transition: var(--transition-smooth);
+        }
+
+        .contact-card:hover {
+            border-color: var(--color-accent);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .contact-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+        }
+
+        .contact-card p {
+            color: var(--color-text-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .contact-card a {
+            color: var(--color-accent-dark);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition-fast);
+        }
+
+        .contact-card a:hover {
+            color: var(--color-accent);
+        }
+
+        /* Footer */
+        footer {
+            background: #feefda;
+            color: var(--color-text-light);
+            padding: 1rem;
+            text-align: center;
+            border-top: 1px solid var(--color-border);
+        }
+
+        footer p {
+            font-size: 0.875rem;
+        }
+
+        /* Scroll Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Hidden class for filtering */
+        .hidden {
+            display: none !important;
+        }
+
+        /* Portfolio Modal */
+        .portfolio-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(26, 26, 26, 0.7);
+            backdrop-filter: blur(8px);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            padding: 2rem;
+        }
+
+        .portfolio-modal.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .modal-content {
+            background: var(--color-white);
+            border-radius: 16px;
+            max-width: 600px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            transform: scale(0.9);
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .portfolio-modal.active .modal-content {
+            transform: scale(1);
+        }
+
+        .modal-header {
+            padding: 2.5rem 2.5rem 1.5rem;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--color-background);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--color-text);
+            transition: var(--transition-fast);
+        }
+
+        .modal-close:hover {
+            background: var(--color-accent);
+            color: var(--color-white);
+            transform: rotate(90deg);
+        }
+
+        .modal-company-name {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--color-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .modal-stage {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            background: var(--color-accent);
+            color: var(--color-white);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: capitalize;
+        }
+
+        .modal-body {
+            padding: 2rem 2.5rem 2.5rem;
+        }
+
+        .modal-detail-item {
+            margin-bottom: 1.75rem;
+        }
+
+        .modal-detail-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .modal-detail-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--color-accent);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .modal-detail-value {
+            color: var(--color-text);
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        .modal-detail-value a {
+            color: var(--color-accent-dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition-fast);
+        }
+
+        .modal-detail-value a:hover {
+            color: var(--color-accent);
+            text-decoration: underline;
+        }
+
+        .modal-detail-value ul {
+            margin: 0;
+            padding-left: 1.25rem;
+        }
+
+        .modal-detail-value li {
+            margin-bottom: 0.5rem;
+            color: var(--color-text-light);
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .hero {
+                padding: 50px 0px 50px 0px;
+            }
+
+            .hero h1 {
+                font-size: clamp(2rem, 6vw, 3rem);
+                margin-bottom: 1rem;
+            }
+
+            .hero-stats {
+                gap: 2.5rem;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+
+            .stat-label {
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 1.5rem 1.5rem;
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            nav.scrolled .nav-container {
+                padding: 1rem 1.5rem;
+            }
+
+            .logo {
+                grid-column: 1;
+                font-size: 1.1rem;
+                order: -1;
+            }
+
+            .nav-left,
+            .nav-right {
+                justify-self: center;
+                gap: 1.5rem;
+            }
+
+            .nav-left {
+                order: 1;
+            }
+
+            .nav-right {
+                order: 2;
+            }
+
+            .nav-left a,
+            .nav-right a {
+                font-size: 0.8rem;
+            }
+
+            .hero {
+                padding: 70px 0px 1px 0px;
+                min-height: auto;
+            }
+
+            .hero h1 {
+                font-size: clamp(1.75rem, 7vw, 2.5rem);
+                margin-bottom: 1rem;
+            }
+
+            .hero-stats {
+                gap: 2rem;
+                flex-direction: column;
+                max-width: 300px;
+                margin: 0 auto;
+            }
+
+            .stat-item {
+                display: block;
+                justify-content: space-between;
+                align-items: baseline;
+                width: 100%;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+
+            .stat-label {
+                font-size: 0.85rem;
+                text-align: right;
+            }
+
+            section {
+                padding: 4rem 1.5rem;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                gap: 1.5rem;
+            }
+
+            .real-estate-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .modal-content {
+                margin: 1rem;
+            }
+
+            .modal-header {
+                padding: 2rem 2rem 1.25rem;
+            }
+
+            .modal-body {
+                padding: 1.5rem 2rem 2rem;
+            }
+
+            .modal-company-name {
+                font-size: 1.5rem;
+            }
+        }
+        
+        .logo-black {
+          filter: brightness(0) saturate(100%) !important;
+        }
+        
+        .logo-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        /*
+        .bg-sher {
+              background-color: #f2f2f2; 
+          
+              background-image: url('/imgs/vadda-sher.png');
+              background-position: left bottom; 
+              background-repeat: no-repeat;
+          
+              background-size: 80px; 
+          }
+        */
+        
+        .has-dropdown {
+            position: relative;
+        }
+        
+        .dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            list-style: none;
+            padding: 10px 0;
+            min-width: 160px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: 0.3s ease;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            border-radius: 8px;
+        }
+        
+        .dropdown li {
+            padding: 0;
+        }
+        
+        .dropdown a {
+            display: block;
+            padding: 10px 20px;
+            font-size: 0.85rem;
+        }
+        
+        .has-dropdown:hover .dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+        
+        .hamburger span {
+            width: 25px;
+            height: 2px;
+            background: #000;
+            display: block;
+        }
+        
+        /* MOBILE */
+        
+        .nav-left.active {
+            display: flex;
+            top: 100%;
+        }
+        
+        .nav-right.active {
+            display: flex;
+            top: calc(100% + 150px); /* adjust based on height */
+        }
+
+        @media (max-width: 768px) {
+            
+            .hamburger {
+                display: flex;
+                grid-column: 3;
+                justify-self: end;
+            }
+        
+            .nav-left,
+            .nav-right {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                gap: 1rem;
+                padding: 20px;
+                display: none;
+            }
+        
+            .nav-left.active,
+            .nav-right.active {
+                display: flex;
+            } 
+        
+            .nav-container {
+                grid-template-columns: 1fr auto auto;
+            }
+        
+            .logo {
+                grid-column: 2;
+            }
+            
+        }
+        
+        .dropdown.active {
+            display: block;
+            position: relative;
+            opacity: 1;
+            visibility: visible;
+            transform: none;
+        }
+        
+        .inner {
+            min-height: 20vh !important;
+            padding: 130px 0px 60px !important;
+        }
+        
+        .inner-page .section-header {
+            text-align:left !important;
+        }
+        
+        .inner-page .section-description {
+           text-align:left !important;
+           max-width: 100%
+           
+        }
+        
+        
+        @media (min-width: 1000px) {
+          .team-img {
+            max-height: 340px;
+            min-height: 340px;
+          }
+        }
+        
+        .dropdown-icon{
+            font-size:12px;
+            display:inline-block;
+            margin-top: -1px;
+        }
+        
+        
+        
+    </style>
+</head>
+<body>
+
+    
+
+    <!-- Navigation -->
+    <nav id="navbar" class="scrolled">
+        <div class="nav-container">
+            <ul class="nav-left">
+                <li><a href="index.html#approach">Approach</a></li>
+                <li><a href="index.html#portfolio">Portfolio</a></li>
+                <li><a href="team.html">Team</a></li>
+                <!--<li><a href="/#real-estate">Real Estate</a></li>-->
+            </ul>
+            <div class="logo-wrapper">
+                <a href="index.html" class="logo"><img src="imgs/scp-bg-1.png" style="width: 180px;" /></a>
+            </div>
+            <ul class="nav-right">
+                <li><a href="philanthropy.html">Philanthropy</a></li>
+                <li><a href="government-affairs.html">Government Affairs</a></li>
+                <!--<li><a href="/contact">Contact Us</a></li>-->    
+                <li class="has-dropdown">
+                    <a href="careers.html#">Connect <span class="dropdown-icon"> 
+                    <svg class="dropdown-icon" xmlns="http://www.w3.org/2000/svg" 
+                        width="32" 
+                        height="32" 
+                        viewBox="0 0 32 32" 
+                        fill="currentColor">
+                        <path d="M7 10l5 5 5-5z"/>
+                    </svg>
+                    
+                    </span></a>
+                    <ul class="dropdown">
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>  
+<script src="https://www.google.com/recaptcha/api.js?render=6Le85wItAAAAAJJC-eujq0viuCjsPfSMs0MjY7lH"></script>
+
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=DM+Sans:wght@300;400;500&display=swap');
+
+/* ── Modal & form styles ── */
+.career-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+.career-modal-content {
+  background: #fff;
+  width: 100%;
+  border-radius: 14px;
+  padding: 35px;
+  position: relative;
+  max-height: 90vh;
+  overflow-y: auto;
+  
+  max-width: 600px;
+}
+.career-modal-close {
+  position: absolute;
+  right: 20px; top: 15px;
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+.form-group { margin-bottom: 18px; }
+.form-group label { display: block; margin-bottom: 8px; font-weight: 600; }
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+/* ── Modal submit button (standalone, not inside .w) ── */
+.career-modal-content .apply-btn,
+#careers .apply-btn {
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 14px 30px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+.career-modal-content .apply-btn:hover,
+#careers .apply-btn:hover { opacity: 0.9; }
+
+/* ── .w content block — all scoped to avoid conflicts ── */
+.w {
+  font-family: 'DM Sans', sans-serif;
+  color: #1a1a1a;
+  max-width: 1180px;
+  padding: 3rem 2rem 4rem;
+  margin: 0 auto;
+}
+.w .eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #888;
+  margin-bottom: 1.1rem;
+}
+.w .headline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 52px;
+  font-weight: 500;
+  line-height: 1.08;
+  margin: 0 0 1.5rem;
+  color: #1a1a1a;
+}
+.w .headline em { font-style: italic; color: #B4916A; }
+.w .lead {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #555;
+  
+  margin-bottom: 0;
+}
+.w .divider {
+  border: none;
+  border-top: 0.5px solid #ddd;
+  margin: 2.25rem 0;
+}
+.w .section-label {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #999;
+  margin-bottom: 1.25rem;
+}
+.w .pitch-block { margin-bottom: 2.5rem; }
+.w .pitch-body {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #555;
+  
+}
+.w .pitch-body strong { color: #1a1a1a; font-weight: 500; }
+
+.w .trait-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 1.5rem 0;
+}
+.w .trait {
+  background: #f7f5f2;
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+  border: 0.5px solid #e0dbd4;
+}
+.w .trait-title { font-size: 13px; font-weight: 500; margin-bottom: 3px; color: #1a1a1a; }
+.w .trait-desc { font-size: 13px; color: #666; line-height: 1.6; }
+
+.w .pill-row { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 1.25rem; }
+.w .pill {
+  font-size: 12px;
+  padding: 4px 12px;
+  border-radius: 100px;
+  border: 0.5px solid #ddd;
+  color: #666;
+  background: #fff;
+}
+
+.w .platform-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  margin: 1.25rem 0;
+}
+.w .platform {
+  border: 0.5px solid #e0dbd4;
+  border-radius: 12px;
+  padding: 0.9rem 1.1rem;
+  background: #f7f5f2;
+}
+.w .platform-name { font-size: 13px; font-weight: 500; margin-bottom: 2px; color: #1a1a1a; }
+.w .platform-desc { font-size: 12px; color: #666; line-height: 1.5; }
+.w .platform-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+.w .loc-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 0.75rem; }
+.w .loc { font-size: 12px; color: #999; display: flex; align-items: center; gap: 5px; }
+
+.w .quote-block {
+  border-left: 2px solid #B4916A;
+  padding: 0.5rem 0 0.5rem 1.25rem;
+  margin: 1.5rem 0;
+}
+.w .quote-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-style: italic;
+  line-height: 1.5;
+  color: #1a1a1a;
+}
+
+.w .cta-block {
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 0.5px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+.w .cta-headline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 1.3;
+  color: #1a1a1a;
+}
+.w .cta-headline em { font-style: italic; color: #B4916A; }
+.w .cta-sub { font-size: 13px; color: #888; margin-top: 4px; }
+
+/* .apply-btn inside .w (CTA area) */
+.w .apply-btn {
+  font-size: 13px;
+  font-weight: 500;
+  padding: 11px 24px;
+  border-radius: 8px;
+  background: #1a1a1a;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: opacity 0.15s;
+}
+.w .apply-btn:hover { opacity: 0.8; }
+
+@media (max-width: 600px) {
+  .w .trait-grid,
+  .w .platform-row { grid-template-columns: 1fr; }
+  .w .headline { font-size: 36px; }
+  .w { padding: 2rem 1.25rem 3rem; }
+}
+</style>
+
+<!-- Hero Section -->
+<section class="hero inner">
+  <div class="hero-content">
+    <h1>Careers</h1>
+  </div>
+</section>
+
+<div class="w">
+
+  <div style="padding-bottom: 2.25rem; border-bottom: 0.5px solid #ddd; margin-bottom: 2.25rem;">
+    <p class="eyebrow">Singh Capital Partners &nbsp;·&nbsp; We're hiring</p>
+    <h1 class="headline">We don't just hire<br>for the role. We hire <em>leaders.</em></h1>
+    
+    
+    <p class="lead">
+    Singh Capital Partners is a family office backing exceptional founders building transformative companies. We invest across direct opportunities, funds, and co-investments in RE, PE, and VC — sitting at the nexus of the tech, financial, and political hubs of the country. Beyond our investment platform, we are building out Singh PAC and Singh Capital Philanthropies, giving our team rare and meaningful exposure across capital, policy, and impact at scale. It's an exciting time to join us.
+    </p>
+    <p class="lead" style="margin-top: 1rem;">
+    We are deliberately assembling a team of sharp, experienced professionals who know how to source, evaluate, and execute — and who bring something more to the table. The best candidates will have real investment chops, strong analytical foundations, and the drive to operate at the highest level. What sets our team apart is that we also seek out people who have been deeply excellent at something outside of work: D1 and professional athletes, musicians, artists, builders, and those who have gone all-in on a pursuit that most wouldn't. We value self-starters, natural connectors, multilingual and multicultural thinkers, and people invested in mentoring the next generation. Credentials matter — so does character.
+    </p>
+    <p class="lead" style="margin-top: 1rem;">
+    We are currently hiring across Senior Leadership, Investment Team, Communications, Operations, and unique but crucial utility player roles. If any of these sound like you, we'd love to connect — apply and come see us in our offices across Washington DC, New York City, and San Francisco.
+    </p>
+    
+    <div class="loc-row" style="margin-top: 1.25rem;">
+      <span class="loc"><i class="ti ti-map-pin" aria-hidden="true" style="font-size:12px"></i>Washington DC</span>
+      <span class="loc"><i class="ti ti-map-pin" aria-hidden="true" style="font-size:12px"></i>New York City</span>
+      <span class="loc"><i class="ti ti-map-pin" aria-hidden="true" style="font-size:12px"></i>San Francisco</span>
+    </div>
+  </div>
+
+  <div class="pitch-block">
+    <p class="section-label">The pitch</p>
+    <div class="quote-block">
+      <div class="quote-text">"We want the athlete who still trains like they're competing. The musician who hears structure where others hear noise. The artist who sees what isn't there yet. The connector who makes every room better. The self-starter who doesn't wait to be told."</div>
+    </div>
+    <p class="pitch-body">
+      What makes someone great at investing — really great — rarely comes from a textbook. It comes from having been <strong>deeply, relentlessly passionate about something hard</strong>. The discipline of a D1 athlete. The ear of a trained musician. The eye of a working artist. The instinct of someone who's built something from nothing.
+    </p>
+    <p class="pitch-body" style="margin-top: 0.85rem;">
+      We deliberately seek out people whose lives have been shaped by <strong>excellence outside the ordinary</strong> — because that's exactly the kind of judgment, grit, and creativity this work demands.
+    </p>
+  </div>
+
+  <hr class="divider">
+
+  <div class="pitch-block">
+    <p class="section-label">Who we're looking for</p>
+    <div class="trait-grid">
+      <div class="trait">
+        <div class="trait-title">Proven excellence</div>
+        <div class="trait-desc">D1 or professional athletes, national competitors, performers — people who know what reaching the top of something truly hard feels like.</div>
+      </div>
+      <div class="trait">
+        <div class="trait-title">Unique, rare skills</div>
+        <div class="trait-desc">Musicians, artists, builders, makers. People who went deep on something most wouldn't. That depth of passion translates directly into how we think and invest.</div>
+      </div>
+      <div class="trait">
+        <div class="trait-title">Natural connectors</div>
+        <div class="trait-desc">People who light up a room and bring others together — across languages, cultures, and backgrounds. We are a global firm and our team should reflect that.</div>
+      </div>
+      <div class="trait">
+        <div class="trait-title">Self-starters</div>
+        <div class="trait-desc">You see what needs doing and you do it. You're energized by ownership, move with urgency, and never wait for permission to lead.</div>
+      </div>
+      <div class="trait">
+        <div class="trait-title">Multilingual &amp; multicultural</div>
+        <div class="trait-desc">We value team members who speak multiple languages and carry the cultural intelligence to build trust across the world's most dynamic markets.</div>
+      </div>
+      <div class="trait">
+        <div class="trait-title">Mentors &amp; multipliers</div>
+        <div class="trait-desc">We build careers here, not just fill seats. We want people who are as invested in lifting up the next generation as they are in their own growth.</div>
+      </div>
+    </div>
+    <p class="pitch-body">Experience levels range from <strong>Analyst to VP</strong> across RE, PE, and VC. We care far less about where you've been and far more about <strong>what you've built, how you think, and who you are.</strong></p>
+  </div>
+
+  <hr class="divider">
+
+  <div class="pitch-block">
+    <p class="section-label">What we're building</p>
+    <p class="pitch-body" style="margin-bottom: 1rem;">This isn't one platform — it's three, converging at the most consequential intersection in the country: tech, finance, and politics.</p>
+    <div class="platform-row">
+      <div class="platform">
+        <div class="platform-dot" style="background: #534AB7;"></div>
+        <div class="platform-name">Singh Capital</div>
+        <div class="platform-desc">Investment platform across RE, PE, VC, and co-investments</div>
+      </div>
+      <div class="platform">
+        <div class="platform-dot" style="background: #0F6E56;"></div>
+        <div class="platform-name">Singh PAC</div>
+        <div class="platform-desc">Political giving platform at the intersection of capital and policy</div>
+      </div>
+      <div class="platform">
+        <div class="platform-dot" style="background: #B4916A;"></div>
+        <div class="platform-name">Singh Capital Philanthropies</div>
+        <div class="platform-desc">Family foundation driving long-term impact and next-gen mentorship</div>
+      </div>
+    </div>
+    <p class="pitch-body" style="margin-top: 0.75rem;">Every person we hire touches all three. The scope is intentional — we want generalists with depth, not specialists with blinders.</p>
+  </div>
+
+  <hr class="divider">
+
+  <div class="pitch-block">
+    <p class="section-label">Our culture</p>
+    <p class="pitch-body">We are a <strong>small, focused, deeply ambitious team</strong> — and we intend to stay that way. We work hard together and we play hard together. The best conversations happen after hours. The best ideas come from unexpected places.</p>
+    <p class="pitch-body" style="margin-top: 0.85rem;">We don't believe in hierarchy for hierarchy's sake. Everyone is here to <strong>lead</strong> — in their role, on their team, and in the broader ecosystem we're helping to build. If you want a place where your background, your passions, and your full self are genuinely valued, this is it.</p>
+    <div class="pill-row">
+      <span class="pill">Small &amp; focused</span>
+      <span class="pill">High ownership</span>
+      <span class="pill">Leaders at every level</span>
+      <span class="pill">Mentorship-driven</span>
+      <span class="pill">Multilingual welcome</span>
+      <span class="pill">In &amp; out of the office</span>
+      <span class="pill">Globally minded</span>
+    </div>
+  </div>
+
+  <div class="cta-block">
+    <div>
+      <div class="cta-headline">Ready to do the best<br>work of your life?<br><em>We want to hear from you.</em></div>
+      <div class="cta-sub">Open roles across DC, NYC, and SF &nbsp;·&nbsp; singhcap.com</div>
+    </div>
+    <button class="apply-btn" id="openCareerModal">Apply Now &rarr;</button>
+  </div>
+
+</div>
+
+
+<!-- Career Modal -->
+<div class="career-modal" id="careerModal">
+  <div class="career-modal-content">
+    <button class="career-modal-close" id="closeCareerModal">&times;</button>
+    <h3 style="margin-bottom:25px;font-size:28px;">Careers — Apply Now</h3>
+    <form id="careerForm" enctype="multipart/form-data">
+      <div class="form-group">
+        <label>Full Name</label>
+        <input type="text" name="name" required>
+      </div>
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label>Phone Number</label>
+        <input type="text" name="phone">
+      </div>
+      <div class="form-group">
+        <label>LinkedIn Profile</label>
+        <input type="text" name="linkedin">
+      </div>
+      <div class="form-group">
+        <label>Message</label>
+        <textarea name="message" rows="5"></textarea>
+      </div>
+      <div id="careerFormMessage" style="margin-top:15px;margin-bottom:15px;"></div>
+      <button type="submit" class="apply-btn">Submit Application</button>
+    </form>
+    
+  </div>
+</div>
+
+<!-- Portfolio Modal -->
+<div class="portfolio-modal" id="portfolioModal">
+  <div class="modal-content">
+    <button class="modal-close" id="modalClose">&times;</button>
+    <div class="modal-header">
+      <h3 class="modal-company-name" id="modalCompanyName"></h3>
+      <span class="modal-stage" id="modalStage"></span>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+
+
+    <!-- Portfolio Modal -->
+    <div class="portfolio-modal" id="portfolioModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">×</button>
+            <div class="modal-header">
+                <h3 class="modal-company-name" id="modalCompanyName"></h3>
+                <span class="modal-stage" id="modalStage"></span>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Content will be dynamically inserted -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Singh Capital Partners. Intelligent Capital. Enduring Impact.</p>
+    </footer>
+    
+    
+    <script>
+    const hamburger = document.getElementById("hamburger");
+    const navLeft = document.querySelector(".nav-left");
+    const navRight = document.querySelector(".nav-right");
+    
+    // toggle menu
+    hamburger.addEventListener("click", () => {
+        navLeft.classList.toggle("active");
+        navRight.classList.toggle("active");
+    });
+    
+    // CLOSE on link click
+    document.querySelectorAll(".nav-left a, .nav-right a").forEach(link => {
+        link.addEventListener("click", (e) => {
+    
+            // if this link is a dropdown toggle, ignore
+            if (link.parentElement.classList.contains("has-dropdown")) {
+                return;
+            }
+    
+            navLeft.classList.remove("active");
+            navRight.classList.remove("active");
+        });
+    });       
+
+        // Portfolio filtering
+        const filterButtons = document.querySelectorAll('.filter-btn');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Update active button
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                // Filter items
+                const filter = button.getAttribute('data-filter');
+                
+                portfolioItems.forEach(item => {
+                    if (filter === 'all') {
+                        item.classList.remove('hidden');
+                    } else {
+                        if (item.getAttribute('data-category') === filter) {
+                            item.classList.remove('hidden');
+                        } else {
+                            item.classList.add('hidden');
+                        }
+                    }
+                });
+            });
+        });
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        const teamData = {
+              "Manpreet Singh": {
+                role: "Chief Investment Officer",
+                img: "imgs/team/dark/manpreet.jpg",
+                linkedin: "https://www.linkedin.com/in/msinghcfa",
+                summary: `
+                  Manpreet Singh, CFA, is the Chief Investment Officer of Singh Capital Partners, a private investment office with a global mandate spanning venture capital, private equity, and real estate.
+                  <br /><br />
+                  Over the past decade, Singh has led more than 50 private investments across sectors including technology, healthcare, and consumer goods. Notable companies include: Alibaba (IPO – 2014), SpaceX, Uber (IPO – 2019), Spotify (Direct Listing – 2018), Anthropic, xAI, Robinhood (IPO – 2021), SoFi (Public via SPAC – 2021), PayTM (IPO – 2021), Impossible Foods, Carta, Groq, Drilling Info / Enverus (Acquired – 2018), 
+                  AlphaSense (Sentio), Cohesity, Postmates (Acquired – 2020), Mindbody (Acquired – 2019), DocSend (Acquired – 2021), Bazaarvoice (IPO – 2012; Acquired – 2018), 
+                  SocialTables (Acquired – 2018), Redesign Health, Avizia (Acquired – 2018), CAM Collective (Thrive / General Catalyst), K2 Space, LucyRx, UrbanStems, US Inspect, TrueBill (Acquired – 2021), Carbon6, DEFI Holdings, Oats Overnight, Duo, Palisades
+                  <br /><br />
+                  Singh currently serves on a range of public, private, and non-profit boards including Cemtrex (Nasdaq: CETX), Investcorp India Acquisition Corp (Nasdaq: IVCA), Continuum, Founderpath, PartsAvatar, Oats Overnight, US Inspect, Snowball Industries, Shukr Investments, Suburban Hospital (Johns Hopkins Medicine), and the Dingman Center at the Smith School of Business, University of Maryland.
+                  <br /><br />
+                  Previously, Singh was the Founder and CEO of TalkLocal, a venture-backed local services marketplace that operated in 49 U.S. states and facilitated over two million customer-contractor connections. Before founding TalkLocal, he served as the first and longest-tenured investor at Profit Investment Management, a Washington, D.C. based firm that grew its assets under management from $20 million to over $2 billion during his tenure.
+                  <br /><br />
+                  Singh earned his MBA from the Wharton School of Business, where he specialized in Entrepreneurship, Finance, and Real Estate. He also holds a B.S. in Finance with a citation in Entrepreneurship from the University of Maryland, College Park, and is a Chartered Financial Analyst (CFA) charterholder. In 2006, he became one of the youngest CFA charterholders in the world and was profiled by the organization as its “Most Ambitious” member.
+                  `
+                },
+                "Chanmeet Narang": {
+                  role: "Chief Of Staff",
+                  img: "imgs/team/dark/chanmeet.jpg",
+                  linkedin: "https://www.linkedin.com/in/chanmeet",
+                  summary: `
+                  Chanmeet S. Narang is the Chief of Staff at Singh Capital Partners, based in New York City, where he supports the Chief Investment Officer across all investment decisions.
+                  <br /><br />
+                  Prior to joining Singh Capital, Narang worked on the Investment Banking team at B. Riley FBR (NYSE: RILY), the Investment Management team at AllianceBernstein (NYSE: EQH), and the Financial Services team at AlphaSense, an AI technology business backed by Viking Global, BDT & MSD Partners, SoftBank Vision Fund, Goldman Sachs Asset Management, and Innovation Endeavors. Chanmeet is also the Co-Founder of Tennis Social AI, venture backed simulator and smart court technology designed to train recreational beginners to professional athletes.
+                   <br /><br />
+                  Before his career in New York, Chanmeet served at the White House in Washington D.C., as part of President Trump’s first administration on the Advance Team. He also held roles as a Congressional Intern for Senator David Perdue on the Senate Committee on Banking, Housing, and Urban Affairs, a Summer Associate at Wheels Up (NYSE: DAL), and a Summer Legislative Analyst at SALDEF.
+                  <br /><br />
+                  Following graduation, he continued his involvement in collegiate athletics as the Assistant Tennis Coach at New York University, helping the team achieve the best season in school history and earning recognition as UAA Conference Coach of the Year. During his time with NYU Tennis, Narang also served as the Head Tennis Professional at the Bridge Golf Club in Bridgehampton and as a Production Contributor and the “Network Enthusiast” for Sports Talk Live, Amazon Prime Video Sport’s 24/7 live sports show. Chanmeet also founded the NCAA Tennis Alumni Network that includes over 600 active members across 13 chapters. 
+                  <br /><br />
+                  Chanmeet earned his B.B.A. in Risk Management from the University of Georgia’s Terry College of Business, where he served as Manager of the NCAA No. 1–ranked Men’s Tennis Program. During his tenure, Georgia captured four SEC titles, made two NCAA Division I Championship semifinal appearances, and maintained an ITA and NCAA top-10 national ranking each season.
+      
+                  `
+                },
+                "Nicholas Ricciardella": {
+                  role: "Vice President",
+                  img: "imgs/team/dark/nic.jpg",
+                  linkedin: "https://www.linkedin.com/in/nicholas-ricciardella-47800296",
+                  summary: `
+                          Nick Ricciardella is a Vice President at Singh Capital, based in Chicago, where he leads the deal process across venture capital, private equity, and real estate investments.
+                          <br /><br />
+                          Before joining Singh Capital, Nick was with Crestone Capital, a multi-family office providing entrepreneurial founders with access to top-tier venture capital and private equity opportunities through its diversified access vehicles. At Crestone, he focused on manager selection and portfolio management across the Montezuma and Maroon funds. Earlier in his career, Nick worked at Dresner Partners, a Chicago-based investment bank, where he supported the firm’s M&A advisory team.
+                          <br /><br />
+                          Nick serves on the boards of Beagle Services and Continuum Venture Partners. He earned a B.A. in Finance with Honors and a minor in Accounting from DePaul University in 2019, and is currently a CFA Level II candidate.
+                          <br /><br />
+                          `
+                },
+                "Simran Chowdhary": {
+                  role: "Senior Associate",
+                  img: "imgs/team/dark/simar.jpg",
+                  linkedin: "https://www.linkedin.com/in/simranchowdhary",
+                  summary: `
+                       Simran Chowdhary is a Senior Associate at Singh Capital, based in Chicago, where he focuses on venture capital, private equity, and real estate investments.
+                       <br /><br />
+                       Before joining Singh Capital in 2021, Simran worked at Fifth Third Bank (NASDAQ: FITB), one of the largest commercial banking institutions in the United States. During his tenure, he supported both the Diversified Industries and National Healthcare verticals, working across the Credit Underwriting and Corporate Finance divisions.
+                       <br /><br />
+                       Simran earned his B.A. in Finance and completed the Banking & Capital Markets program at DePaul University in 2019.
+                       <br /><br />
+                       `
+                },
+                "Caroline Lampl": {
+                  role: "Senior Associate",
+                  img: "imgs/team/dark/caroline.jpg",
+                  linkedin: "https://www.linkedin.com/in/caroline-lampl-534165116",
+                  summary: `
+                        Caroline Lampl is a Senior Associate at Singh Capital, based in Chicago, where she focuses on venture capital, private equity, and real estate investments.
+                        <br><br>
+
+                        Prior to joining Singh Capital, Caroline pursued a career in professional tennis, achieving a career-high world ranking of 650. Following her athletic career, she worked at Morgan Stanley Investment Management before beginning her venture capital journey at Franklin Templeton, where she was part of the firm’s private investing division.
+                        <br><br>
+                        
+                        Caroline earned her B.S. in Science, Technology & Society from Stanford University, where she was a four-year starter in both singles and doubles and served as Captain of the NCAA Division I Varsity Women’s Tennis Team during her junior and senior years. During her time at Stanford, she helped lead the team to three NCAA National Championships, earned All–Pac-12 First Team and NCAA All-Tournament Team honors, received multiple Pac-12 Player of the Week awards, and was named Stanford’s Most Competitive Athlete her senior year. She was also recognized as a Pac-12 All-Academic Honorable Mention all four years. Outside athletics, Caroline was a member of Smart Woman Securities, a national organization promoting financial literacy for women on college campuses.
+	                    <br><br>
+                  `
+                },
+                "Kemen Linsuain": {
+                  role: "Senior Associate",
+                  img: "imgs/team/dark/kemen.jpg",
+                  linkedin: "https://www.linkedin.com/in/kemen-linsuain",
+                  summary: `
+                        Kemen Linsuain is an Associate at Singh Capital, based in Washington, D.C., where he focuses on venture capital, private equity, and real estate investments.
+                        <br /><br />
+                        Before joining Singh Capital in 2024, Kemen was the first full-time marketing hire at Gauntlet, a blockchain market research startup backed by Ribbit Capital, Polychain Capital, and Paradigm. Earlier, he served as an Investment Analyst at Capital Guidance, an international family office that owns and operates a portfolio of businesses, including Madison Marquette, a $3 billion diversified real estate firm. Prior to that, he worked as an Investment Analyst at Dean Capital Investments, a Washington, D.C.–based family office, where he focused on liquid credit investments in the industrials and consumer sectors.
+                        <br /><br />
+                        Kemen earned his B.A. in Physics and Mathematics from Harvard College. While at Harvard, he conducted research with the Philip Kim Group on the electrical and physical properties of graphene, a project supported by the Semiconductor Research Corporation and DARPA. He also co-authored a paper in the Illinois Journal of Mathematics that proved several previously unknown results in the geometry of high-dimensional hyperbolic spaces.
+                      `
+        }
+      };
+      
+      
+      document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                closeModal();
+            }
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                //navbar.classList.add('scrolled');
+            } else {
+                //navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Approach card expand/collapse
+        const approachCards = document.querySelectorAll('.approach-card');
+        approachCards.forEach(card => {
+            card.addEventListener('click', () => {
+                const isExpanded = card.classList.contains('expanded');
+                
+                // Close all other cards
+                approachCards.forEach(c => {
+                    c.classList.remove('expanded');
+                });
+                
+                // Toggle clicked card
+                if (!isExpanded) {
+                    card.classList.add('expanded');
+                }
+            });
+        });
+        
+        
+     
+  
+    </script>
+</body>
+</html>
+
+<script>
+const careerModal     = document.getElementById("careerModal");
+const openCareerModal = document.getElementById("openCareerModal");
+const closeCareerModal= document.getElementById("closeCareerModal");
+
+if (openCareerModal) {
+  openCareerModal.addEventListener("click", () => {
+    careerModal.style.display = "flex";
+  });
+}
+if (closeCareerModal) {
+  closeCareerModal.addEventListener("click", () => {
+    careerModal.style.display = "none";
+  });
+}
+window.addEventListener("click", (e) => {
+  if (e.target === careerModal) careerModal.style.display = "none";
+});
+
+
+
+
+// AJAX form submit
+const careerForm = document.getElementById("careerForm");
+if (careerForm) {
+  careerForm.addEventListener("submit", async function(e) {
+    e.preventDefault();
+    const formData  = new FormData(careerForm);
+    const submitBtn = careerForm.querySelector("button[type='submit']");
+    const messageBox= document.getElementById("careerFormMessage");
+
+    submitBtn.disabled   = true;
+    submitBtn.innerHTML  = "Submitting…";
+    messageBox.innerHTML = "";
+    
+    const token = await grecaptcha.execute('6Le85wItAAAAAJJC-eujq0viuCjsPfSMs0MjY7lH', { action: 'careers_apply' });
+    formData.append('recaptcha_token', token);
+
+    try {
+      const response = await fetch("process/send-career-email.php", {
+        method: "POST",
+        body: formData
+      });
+      const data = await response.json();
+
+      if (data.status === "success") {
+        messageBox.innerHTML = `<div style="color:green;font-weight:600;">${data.message}</div>`;
+        careerForm.reset();
+      } else {
+        messageBox.innerHTML = `<div style="color:red;font-weight:600;">${data.message}</div>`;
+      }
+    } catch (error) {
+      messageBox.innerHTML = `<div style="color:red;font-weight:600;">Something went wrong. Please try again.</div>`;
+    }
+
+    submitBtn.disabled  = false;
+    submitBtn.innerHTML = "Submit Application";
+  });
+}
+</script>
