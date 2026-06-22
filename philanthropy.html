@@ -1170,85 +1170,7 @@
         </div>
     </nav>  
 <style>
-.phil-modal {
-    position: fixed;
-    inset: 0;
-    background: rgba(12,11,9,0.7);
-    backdrop-filter: blur(8px);
-    z-index: 2000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-}
-.phil-modal.active { opacity: 1; pointer-events: all; }
-.phil-modal-box {
-    background: #FFFFFF;
-    border-radius: 4px;
-    max-width: 560px;
-    width: 100%;
-    max-height: 88vh;
-    overflow-y: auto;
-    transform: translateY(16px) scale(0.98);
-    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 24px 64px rgba(0,0,0,0.25);
-}
-.phil-modal.active .phil-modal-box { transform: none; }
-.phil-modal-head {
-    padding: 2.5rem 2.5rem 1.5rem;
-    border-bottom: 1px solid #E8E4DD;
-    position: relative;
-}
-.phil-modal-close {
-    position: absolute;
-    top: 1.5rem;
-    right: 1.5rem;
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 1.5rem;
-    color: #7A7470;
-    line-height: 1;
-    transition: color 0.2s, transform 0.3s;
-}
-.phil-modal-close:hover { color: #1A1A1A; transform: rotate(90deg); }
-.phil-modal-logo { margin-bottom: 1.25rem; }
-.phil-modal-logo img { max-height: 44px; max-width: 200px; object-fit: contain; display: block; }
-.phil-modal-name { font-size: 1.4rem; font-weight: 600; color: #1A1A1A; line-height: 1.3; }
-.phil-modal-badge {
-    display: inline-block;
-    margin-top: 0.6rem;
-    padding: 0.3rem 0.9rem;
-    background: #F5F2ED;
-    border-radius: 2px;
-    font-size: 0.72rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: #7A7470;
-}
-.phil-modal-body { padding: 2rem 2.5rem 2.5rem; }
-.phil-modal-field { margin-bottom: 1.5rem; }
-.phil-modal-field:last-child { margin-bottom: 0; }
-.phil-modal-label {
-    font-size: 0.65rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: #8B7355;
-    margin-bottom: 0.4rem;
-    display: block;
-}
-.phil-modal-val { font-size: 0.9rem; font-weight: 300; line-height: 1.7; color: #3A3732; }
-.phil-modal-val a {
-    color: #8B7355;
-    text-decoration: none;
-    border-bottom: 1px solid rgba(139,115,85,0.35);
-    padding-bottom: 1px;
-    transition: border-color 0.2s;
-}
-.phil-modal-val a:hover { border-color: #8B7355; }
+#philModalLogo img { max-height: 48px; max-width: 180px; object-fit: contain; display: block; margin-bottom: 0.25rem; }
 </style>
 
 
@@ -1443,15 +1365,15 @@
  </div>
  
 <!-- Phil Modal -->
-<div class="phil-modal" id="philModal">
-    <div class="phil-modal-box">
-        <div class="phil-modal-head">
-            <button class="phil-modal-close" id="philModalClose">×</button>
-            <div class="phil-modal-logo" id="philModalLogo"></div>
-            <div class="phil-modal-name" id="philModalName"></div>
-            <span class="phil-modal-badge" id="philModalBadge"></span>
+<div class="portfolio-modal" id="philModal">
+    <div class="modal-content">
+        <button class="modal-close" id="philModalClose">×</button>
+        <div class="modal-header">
+            <div id="philModalLogo"></div>
+            <h3 class="modal-company-name" id="philModalName"></h3>
+            <span class="modal-stage" id="philModalBadge"></span>
         </div>
-        <div class="phil-modal-body" id="philModalBody"></div>
+        <div class="modal-body" id="philModalBody"></div>
     </div>
 </div>
 
@@ -1526,98 +1448,6 @@
             });
         });
         
-        const teamData = {
-              "Manpreet Singh": {
-                role: "Chief Investment Officer",
-                img: "imgs/team/dark/manpreet.jpg",
-                linkedin: "https://www.linkedin.com/in/msinghcfa",
-                summary: `
-                  Manpreet Singh, CFA, is the Chief Investment Officer of Singh Capital Partners, a private investment office with a global mandate spanning venture capital, private equity, and real estate.
-                  <br /><br />
-                  Over the past decade, Singh has led more than 50 private investments across sectors including technology, healthcare, and consumer goods. Notable companies include: Alibaba (IPO – 2014), SpaceX, Uber (IPO – 2019), Spotify (Direct Listing – 2018), Anthropic, xAI, Robinhood (IPO – 2021), SoFi (Public via SPAC – 2021), PayTM (IPO – 2021), Impossible Foods, Carta, Groq, Drilling Info / Enverus (Acquired – 2018), 
-                  AlphaSense (Sentio), Cohesity, Postmates (Acquired – 2020), Mindbody (Acquired – 2019), DocSend (Acquired – 2021), Bazaarvoice (IPO – 2012; Acquired – 2018), 
-                  SocialTables (Acquired – 2018), Redesign Health, Avizia (Acquired – 2018), CAM Collective (Thrive / General Catalyst), K2 Space, LucyRx, UrbanStems, US Inspect, TrueBill (Acquired – 2021), Carbon6, DEFI Holdings, Oats Overnight, Duo, Palisades
-                  <br /><br />
-                  Singh currently serves on a range of public, private, and non-profit boards including Cemtrex (Nasdaq: CETX), Investcorp India Acquisition Corp (Nasdaq: IVCA), Continuum, Founderpath, PartsAvatar, Oats Overnight, US Inspect, Snowball Industries, Shukr Investments, Suburban Hospital (Johns Hopkins Medicine), and the Dingman Center at the Smith School of Business, University of Maryland.
-                  <br /><br />
-                  Previously, Singh was the Founder and CEO of TalkLocal, a venture-backed local services marketplace that operated in 49 U.S. states and facilitated over two million customer-contractor connections. Before founding TalkLocal, he served as the first and longest-tenured investor at Profit Investment Management, a Washington, D.C. based firm that grew its assets under management from $20 million to over $2 billion during his tenure.
-                  <br /><br />
-                  Singh earned his MBA from the Wharton School of Business, where he specialized in Entrepreneurship, Finance, and Real Estate. He also holds a B.S. in Finance with a citation in Entrepreneurship from the University of Maryland, College Park, and is a Chartered Financial Analyst (CFA) charterholder. In 2006, he became one of the youngest CFA charterholders in the world and was profiled by the organization as its “Most Ambitious” member.
-                  `
-                },
-                "Chanmeet Narang": {
-                  role: "Chief Of Staff",
-                  img: "imgs/team/dark/chanmeet.jpg",
-                  linkedin: "https://www.linkedin.com/in/chanmeet",
-                  summary: `
-                  Chanmeet S. Narang is the Chief of Staff at Singh Capital Partners, based in New York City, where he supports the Chief Investment Officer across all investment decisions.
-                  <br /><br />
-                  Prior to joining Singh Capital, Narang worked on the Investment Banking team at B. Riley FBR (NYSE: RILY), the Investment Management team at AllianceBernstein (NYSE: EQH), and the Financial Services team at AlphaSense, an AI technology business backed by Viking Global, BDT & MSD Partners, SoftBank Vision Fund, Goldman Sachs Asset Management, and Innovation Endeavors. Chanmeet is also the Co-Founder of Tennis Social AI, venture backed simulator and smart court technology designed to train recreational beginners to professional athletes.
-                   <br /><br />
-                  Before his career in New York, Chanmeet served at the White House in Washington D.C., as part of President Trump’s first administration on the Advance Team. He also held roles as a Congressional Intern for Senator David Perdue on the Senate Committee on Banking, Housing, and Urban Affairs, a Summer Associate at Wheels Up (NYSE: DAL), and a Summer Legislative Analyst at SALDEF.
-                  <br /><br />
-                  Following graduation, he continued his involvement in collegiate athletics as the Assistant Tennis Coach at New York University, helping the team achieve the best season in school history and earning recognition as UAA Conference Coach of the Year. During his time with NYU Tennis, Narang also served as the Head Tennis Professional at the Bridge Golf Club in Bridgehampton and as a Production Contributor and the “Network Enthusiast” for Sports Talk Live, Amazon Prime Video Sport’s 24/7 live sports show. Chanmeet also founded the NCAA Tennis Alumni Network that includes over 600 active members across 13 chapters. 
-                  <br /><br />
-                  Chanmeet earned his B.B.A. in Risk Management from the University of Georgia’s Terry College of Business, where he served as Manager of the NCAA No. 1–ranked Men’s Tennis Program. During his tenure, Georgia captured four SEC titles, made two NCAA Division I Championship semifinal appearances, and maintained an ITA and NCAA top-10 national ranking each season.
-      
-                  `
-                },
-                "Nicholas Ricciardella": {
-                  role: "Vice President",
-                  img: "imgs/team/dark/nic.jpg",
-                  linkedin: "https://www.linkedin.com/in/nicholas-ricciardella-47800296",
-                  summary: `
-                          Nick Ricciardella is a Vice President at Singh Capital, based in Chicago, where he leads the deal process across venture capital, private equity, and real estate investments.
-                          <br /><br />
-                          Before joining Singh Capital, Nick was with Crestone Capital, a multi-family office providing entrepreneurial founders with access to top-tier venture capital and private equity opportunities through its diversified access vehicles. At Crestone, he focused on manager selection and portfolio management across the Montezuma and Maroon funds. Earlier in his career, Nick worked at Dresner Partners, a Chicago-based investment bank, where he supported the firm’s M&A advisory team.
-                          <br /><br />
-                          Nick serves on the boards of Beagle Services and Continuum Venture Partners. He earned a B.A. in Finance with Honors and a minor in Accounting from DePaul University in 2019, and is currently a CFA Level II candidate.
-                          <br /><br />
-                          `
-                },
-                "Simran Chowdhary": {
-                  role: "Senior Associate",
-                  img: "imgs/team/dark/simar.jpg",
-                  linkedin: "https://www.linkedin.com/in/simranchowdhary",
-                  summary: `
-                       Simran Chowdhary is a Senior Associate at Singh Capital, based in Chicago, where he focuses on venture capital, private equity, and real estate investments.
-                       <br /><br />
-                       Before joining Singh Capital in 2021, Simran worked at Fifth Third Bank (NASDAQ: FITB), one of the largest commercial banking institutions in the United States. During his tenure, he supported both the Diversified Industries and National Healthcare verticals, working across the Credit Underwriting and Corporate Finance divisions.
-                       <br /><br />
-                       Simran earned his B.A. in Finance and completed the Banking & Capital Markets program at DePaul University in 2019.
-                       <br /><br />
-                       `
-                },
-                "Caroline Lampl": {
-                  role: "Senior Associate",
-                  img: "imgs/team/dark/caroline.jpg",
-                  linkedin: "https://www.linkedin.com/in/caroline-lampl-534165116",
-                  summary: `
-                        Caroline Lampl is a Senior Associate at Singh Capital, based in Chicago, where she focuses on venture capital, private equity, and real estate investments.
-                        <br><br>
-
-                        Prior to joining Singh Capital, Caroline pursued a career in professional tennis, achieving a career-high world ranking of 650. Following her athletic career, she worked at Morgan Stanley Investment Management before beginning her venture capital journey at Franklin Templeton, where she was part of the firm’s private investing division.
-                        <br><br>
-                        
-                        Caroline earned her B.S. in Science, Technology & Society from Stanford University, where she was a four-year starter in both singles and doubles and served as Captain of the NCAA Division I Varsity Women’s Tennis Team during her junior and senior years. During her time at Stanford, she helped lead the team to three NCAA National Championships, earned All–Pac-12 First Team and NCAA All-Tournament Team honors, received multiple Pac-12 Player of the Week awards, and was named Stanford’s Most Competitive Athlete her senior year. She was also recognized as a Pac-12 All-Academic Honorable Mention all four years. Outside athletics, Caroline was a member of Smart Woman Securities, a national organization promoting financial literacy for women on college campuses.
-	                    <br><br>
-                  `
-                },
-                "Kemen Linsuain": {
-                  role: "Senior Associate",
-                  img: "imgs/team/dark/kemen.jpg",
-                  linkedin: "https://www.linkedin.com/in/kemen-linsuain",
-                  summary: `
-                        Kemen Linsuain is an Associate at Singh Capital, based in Washington, D.C., where he focuses on venture capital, private equity, and real estate investments.
-                        <br /><br />
-                        Before joining Singh Capital in 2024, Kemen was the first full-time marketing hire at Gauntlet, a blockchain market research startup backed by Ribbit Capital, Polychain Capital, and Paradigm. Earlier, he served as an Investment Analyst at Capital Guidance, an international family office that owns and operates a portfolio of businesses, including Madison Marquette, a $3 billion diversified real estate firm. Prior to that, he worked as an Investment Analyst at Dean Capital Investments, a Washington, D.C.–based family office, where he focused on liquid credit investments in the industrials and consumer sectors.
-                        <br /><br />
-                        Kemen earned his B.A. in Physics and Mathematics from Harvard College. While at Harvard, he conducted research with the Philip Kim Group on the electrical and physical properties of graphene, a project supported by the Semiconductor Research Corporation and DARPA. He also co-authored a paper in the Illinois Journal of Mathematics that proved several previously unknown results in the geometry of high-dimensional hyperbolic spaces.
-                      `
-        }
-      };
-      
-      
         // Scroll animations
         const observerOptions = {
             threshold: 0.1,
@@ -1667,10 +1497,8 @@
   
     </script>
 <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a0e450a21a663011',t:'MTc4MTg5MDc4NQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"1954b47c125f43f8b4338b3c4f804e4f","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
-</body>
-</html>
 
-<script>
+    <script>
 
 
 // Company data
@@ -1914,20 +1742,20 @@
             document.getElementById('philModalName').textContent = company.name;
             document.getElementById('philModalBadge').textContent = company.stage;
 
-            let html = `<div class="phil-modal-field">
-                <span class="phil-modal-label">About</span>
-                <div class="phil-modal-val">${company.description}</div>
+            let html = `<div class="modal-detail-item">
+                <div class="modal-detail-label">About</div>
+                <div class="modal-detail-value">${company.description}</div>
             </div>`;
 
             if (company.website) {
-                html += `<div class="phil-modal-field">
-                    <span class="phil-modal-label">Website</span>
-                    <div class="phil-modal-val"><a href="${company.website}" target="_blank" rel="noopener">${company.website}</a></div>
+                html += `<div class="modal-detail-item">
+                    <div class="modal-detail-label">Website</div>
+                    <div class="modal-detail-value"><a href="${company.website}" target="_blank" rel="noopener">${company.website}</a></div>
                 </div>`;
             } else if (company.linkedin) {
-                html += `<div class="phil-modal-field">
-                    <span class="phil-modal-label">Connect</span>
-                    <div class="phil-modal-val"><a href="${company.linkedin}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:0.4rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a></div>
+                html += `<div class="modal-detail-item">
+                    <div class="modal-detail-label">Connect</div>
+                    <div class="modal-detail-value"><a href="${company.linkedin}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:0.4rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a></div>
                 </div>`;
             }
 
@@ -1954,3 +1782,6 @@
         });
 
 </script>
+</body>
+</html>
+
