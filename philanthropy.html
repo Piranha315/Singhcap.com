@@ -1167,85 +1167,43 @@
         </div>
     </nav>  
 <style>
-.phil-modal {
-    position: fixed;
-    inset: 0;
-    background: rgba(12,11,9,0.7);
-    backdrop-filter: blur(8px);
-    z-index: 2000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-}
-.phil-modal.active { opacity: 1; pointer-events: all; }
-.phil-modal-box {
-    background: #FFFFFF;
-    border-radius: 4px;
-    max-width: 560px;
-    width: 100%;
-    max-height: 88vh;
-    overflow-y: auto;
-    transform: translateY(16px) scale(0.98);
-    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 24px 64px rgba(0,0,0,0.25);
-}
-.phil-modal.active .phil-modal-box { transform: none; }
-.phil-modal-head {
-    padding: 2.5rem 2.5rem 1.5rem;
-    border-bottom: 1px solid #E8E4DD;
-    position: relative;
-}
-.phil-modal-close {
-    position: absolute;
-    top: 1.5rem;
-    right: 1.5rem;
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 1.5rem;
-    color: #7A7470;
-    line-height: 1;
-    transition: color 0.2s, transform 0.3s;
-}
-.phil-modal-close:hover { color: #1A1A1A; transform: rotate(90deg); }
-.phil-modal-logo { margin-bottom: 1.25rem; }
-.phil-modal-logo img { max-height: 44px; max-width: 200px; object-fit: contain; display: block; }
-.phil-modal-name { font-size: 1.4rem; font-weight: 600; color: #1A1A1A; line-height: 1.3; }
-.phil-modal-badge {
-    display: inline-block;
+
+
+.phil-brief {
+    font-size: 0.78rem;
+    font-weight: 300;
+    line-height: 1.5;
+    color: #5A5A5A;
+    text-align: center;
     margin-top: 0.6rem;
-    padding: 0.3rem 0.9rem;
-    background: #F5F2ED;
-    border-radius: 2px;
-    font-size: 0.72rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: #7A7470;
+    padding: 0 0.75rem 0.75rem;
+    max-width: 200px;
 }
-.phil-modal-body { padding: 2rem 2.5rem 2.5rem; }
-.phil-modal-field { margin-bottom: 1.5rem; }
-.phil-modal-field:last-child { margin-bottom: 0; }
-.phil-modal-label {
-    font-size: 0.65rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: #8B7355;
-    margin-bottom: 0.4rem;
-    display: block;
-}
-.phil-modal-val { font-size: 0.9rem; font-weight: 300; line-height: 1.7; color: #3A3732; }
-.phil-modal-val a {
-    color: #8B7355;
-    text-decoration: none;
-    border-bottom: 1px solid rgba(139,115,85,0.35);
-    padding-bottom: 1px;
-    transition: border-color 0.2s;
-}
-.phil-modal-val a:hover { border-color: #8B7355; }
+
+/* Portfolio Modal */
+        .phil-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(26, 26, 26, 0.7);
+            backdrop-filter: blur(8px);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            padding: 2rem;
+        }
+
+        .phil-modal.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
 </style>
 
 
@@ -1281,6 +1239,8 @@
         </div>           
     </section>
 
+    
+
     <section id="approach" style="padding-top:0px;">
         <div class="section-header fade-in">
             <h2>Philanthropic Contributions</h2>
@@ -1293,140 +1253,154 @@
 
             <li>
               <div class="block h-full phil-item" data-category="Hospital" data-company-id="cnh">
-                <div class="flex flex-col items-center justify-start p-4 bg-white border border-gray-300 cursor-pointer transition-all duration-300" style="height:140px;">
+                <div class="flex flex-col items-center justify-start p-4 bg-white border border-gray-300 cursor-pointer transition-all duration-300" style="height:230px;">
                   <div class="flex items-center justify-center mx-auto" style="height:120px;">
                     <img src="phil-logos/child.jpg" class="max-w-full max-h-full object-contain" style="max-width:120px;max-height:100px;" />
                   </div>
+                  
                 </div>
               </div>
             </li>
 
             <li>
               <div class="block h-full phil-item" data-category="Hospital" data-company-id="dasvand">
-                <div class="flex flex-col items-center justify-start p-4 bg-white border border-gray-300 cursor-pointer transition-all duration-300" style="height:140px;">
+                <div class="flex flex-col items-center justify-start p-4 bg-white border border-gray-300 cursor-pointer transition-all duration-300" style="height:230px;">
                   <div class="flex items-center justify-center mx-auto" style="height:120px;">
                     <img src="phil-logos/dvn_logo.webp" class="max-w-full max-h-full object-contain" style="max-width:140px;max-height:100px;" />
                   </div>
+                  
                 </div>
               </div>
             </li>
 
             <li>
               <div class="block h-full phil-item" data-category="Nonprofit" data-company-id="globalsikh">
-                <div class="flex flex-col items-center justify-start p-4 bg-white border border-gray-300 cursor-pointer transition-all duration-300" style="height:140px;">
+                <div class="flex flex-col items-center justify-start p-4 bg-white border border-gray-300 cursor-pointer transition-all duration-300" style="height:230px;">
                   <div class="flex items-center justify-center mx-auto" style="height:120px;">
                     <img src="phil-logos/sikh-global.jpg" class="max-w-full max-h-full object-contain" style="max-width:100px;max-height:100px;" />
                   </div>
+                  
                 </div>
               </div>
             </li>
 
             <li>
               <div class="block h-full phil-item" data-category="Nonprofit" data-company-id="herhealth">
-                <div class="flex flex-col items-center justify-start p-4 bg-white border border-gray-300 cursor-pointer transition-all duration-300" style="height:140px;">
+                <div class="flex flex-col items-center justify-start p-4 bg-white border border-gray-300 cursor-pointer transition-all duration-300" style="height:230px;">
                   <div class="flex items-center justify-center mx-auto" style="height:120px;">
                     <img src="phil-logos/health-logo.webp" class="max-w-full max-h-full object-contain" style="max-width:160px;max-height:100px;" />
                   </div>
+                  
                 </div>
               </div>
             </li>
 
             <li>
               <div class="block h-full phil-item" data-category="Nonprofit" data-company-id="khalsaaid">
-                <div class="flex flex-col items-center justify-start p-4 bg-white border border-gray-300 cursor-pointer transition-all duration-300" style="height:140px;">
+                <div class="flex flex-col items-center justify-start p-4 bg-white border border-gray-300 cursor-pointer transition-all duration-300" style="height:230px;">
                   <div class="flex items-center justify-center mx-auto" style="height:120px;">
                     <img src="phil-logos/khalsa-aid.png" class="max-w-full max-h-full object-contain" style="max-width:120px;max-height:100px;" />
                   </div>
+                  
                 </div>
               </div>
             </li>
 
             <li>
               <div class="block h-full phil-item" data-category="Nonprofit" data-company-id="milken">
-                <div class="flex flex-col items-center justify-start p-4 bg-white border border-gray-300 cursor-pointer transition-all duration-300" style="height:140px;">
+                <div class="flex flex-col items-center justify-start p-4 bg-white border border-gray-300 cursor-pointer transition-all duration-300" style="height:230px;">
                   <div class="flex items-center justify-center mx-auto" style="height:120px;">
                     <img src="phil-logos/milken-logo.svg" class="object-contain" style="max-width:150px;max-height:80px;" />
                   </div>
+                  
                 </div>
               </div>
             </li>
 
             <li>
               <div class="block h-full phil-item" data-category="Nonprofit" data-company-id="tennis">
-                <div class="flex flex-col items-center justify-start p-4 bg-white border border-gray-300 cursor-pointer transition-all duration-300" style="height:140px;">
+                <div class="flex flex-col items-center justify-start p-4 bg-white border border-gray-300 cursor-pointer transition-all duration-300" style="height:230px;">
                   <div class="flex items-center justify-center mx-auto" style="height:120px;">
-                    <img src="phil-logos/tennis.png" class="object-contain" style="max-width:80px;max-height:80px;filter:brightness(0);" />
+                    <img src="phil-logos/tennis.png" class="object-contain" style="max-width:80px;max-height:80px;filter:drop-shadow(0px 0px 3px rgba(0,0,0,0.5));" />
                   </div>
+                  
                 </div>
               </div>
             </li>
 
             <li>
               <div class="block h-full phil-item" data-category="Nonprofit" data-company-id="prostate">
-                <div class="flex flex-col items-center justify-start p-4 bg-white border border-gray-300 cursor-pointer transition-all duration-300" style="height:140px;">
+                <div class="flex flex-col items-center justify-start p-4 bg-white border border-gray-300 cursor-pointer transition-all duration-300" style="height:230px;">
                   <div class="flex items-center justify-center mx-auto" style="height:120px;">
                     <img src="phil-logos/prostate.png" class="max-w-full max-h-full object-contain" style="max-width:140px;max-height:100px;" />
                   </div>
+                  
                 </div>
               </div>
             </li>
 
             <li>
               <div class="block h-full phil-item" data-category="Nonprofit" data-company-id="round">
-                <div class="flex flex-col items-center justify-start p-4 bg-white border border-gray-300 cursor-pointer transition-all duration-300" style="height:140px;">
+                <div class="flex flex-col items-center justify-start p-4 bg-white border border-gray-300 cursor-pointer transition-all duration-300" style="height:230px;">
                   <div class="flex items-center justify-center mx-auto" style="height:120px;">
                     <img src="phil-logos/round-glass.png" class="max-w-full max-h-full object-contain" style="max-width:140px;max-height:100px;" />
                   </div>
+                  
                 </div>
               </div>
             </li>
 
             <li>
               <div class="block h-full phil-item" data-category="Nonprofit" data-company-id="sal">
-                <div class="flex flex-col items-center justify-start p-4 bg-white border border-gray-300 cursor-pointer transition-all duration-300" style="height:140px;">
+                <div class="flex flex-col items-center justify-start p-4 bg-white border border-gray-300 cursor-pointer transition-all duration-300" style="height:230px;">
                   <div class="flex items-center justify-center mx-auto" style="height:120px;">
                     <img src="phil-logos/sal.svg" class="object-contain" style="max-width:120px;max-height:80px;" />
                   </div>
+                  
                 </div>
               </div>
             </li>
 
             <li>
               <div class="block h-full phil-item" data-category="Nonprofit" data-company-id="sevatruck">
-                <div class="flex flex-col items-center justify-start p-4 bg-white border border-gray-300 cursor-pointer transition-all duration-300" style="height:140px;">
+                <div class="flex flex-col items-center justify-start p-4 bg-white border border-gray-300 cursor-pointer transition-all duration-300" style="height:230px;">
                   <div class="flex items-center justify-center mx-auto" style="height:120px;">
                     <img src="phil-logos/SevaTruck-Logo.png" class="max-w-full max-h-full object-contain" style="max-width:140px;max-height:100px;" />
                   </div>
+                  
                 </div>
               </div>
             </li>
 
             <li>
               <div class="block h-full phil-item" data-category="Nonprofit" data-company-id="sikhcoal">
-                <div class="flex flex-col items-center justify-start p-4 bg-white border border-gray-300 cursor-pointer transition-all duration-300" style="height:140px;">
+                <div class="flex flex-col items-center justify-start p-4 bg-white border border-gray-300 cursor-pointer transition-all duration-300" style="height:230px;">
                   <div class="flex items-center justify-center mx-auto" style="height:120px;">
                     <img src="phil-logos/sikhcoal.png" class="max-w-full max-h-full object-contain" style="max-width:140px;max-height:100px;" />
                   </div>
+                  
                 </div>
               </div>
             </li>
 
             <li>
               <div class="block h-full phil-item" data-category="Nonprofit" data-company-id="road">
-                <div class="flex flex-col items-center justify-start p-4 bg-white border border-gray-300 cursor-pointer transition-all duration-300" style="height:140px;">
+                <div class="flex flex-col items-center justify-start p-4 bg-white border border-gray-300 cursor-pointer transition-all duration-300" style="height:230px;">
                   <div class="flex items-center justify-center mx-auto" style="height:120px;">
                     <img src="phil-logos/road.jpg" class="max-w-full max-h-full object-contain" style="max-width:110px;max-height:100px;" />
                   </div>
+                  
                 </div>
               </div>
             </li>
 
             <li>
               <div class="block h-full phil-item" data-category="Nonprofit" data-company-id="space">
-                <div class="flex flex-col items-center justify-start p-4 bg-white border border-gray-300 cursor-pointer transition-all duration-300" style="height:140px;">
+                <div class="flex flex-col items-center justify-start p-4 bg-white border border-gray-300 cursor-pointer transition-all duration-300" style="height:230px;">
                   <div class="flex items-center justify-center mx-auto" style="height:120px;">
                     <img src="phil-logos/space.jpg" class="max-w-full max-h-full object-contain" style="max-width:140px;max-height:100px;" />
                   </div>
+                  
                 </div>
               </div>
             </li>
@@ -1441,20 +1415,36 @@
  
 <!-- Phil Modal -->
 <div class="phil-modal" id="philModal">
-    <div class="phil-modal-box">
-        <div class="phil-modal-head">
-            <button class="phil-modal-close" id="philModalClose">×</button>
-            <div class="phil-modal-logo" id="philModalLogo"></div>
-            <div class="phil-modal-name" id="philModalName"></div>
-            <span class="phil-modal-badge" id="philModalBadge"></span>
+    <div class="modal-content">
+        <button class="modal-close" id="modalClose">×</button>
+        <div class="modal-header">
+            <h3 class="modal-company-name" id="modalCompanyName"></h3>
+            <span class="modal-stage" id="modalStage"></span>
         </div>
-        <div class="phil-modal-body" id="philModalBody"></div>
+        <div class="modal-body" id="modalBody">
+            <!-- Content will be dynamically inserted -->
+        </div>
     </div>
 </div>
 
+
+    <!-- Portfolio Modal -->
+    <div class="portfolio-modal" id="portfolioModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">×</button>
+            <div class="modal-header">
+                <h3 class="modal-company-name" id="modalCompanyName"></h3>
+                <span class="modal-stage" id="modalStage"></span>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Content will be dynamically inserted -->
+            </div>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer>
-        <p>© 2026 Singh Capital Partners. Intelligent Capital. Enduring Impact.</p>
+        <p>© 2026 Singh Capital Partners LLC. Intelligent Capital. Enduring Impact.</p>
     </footer>
     
     
@@ -1615,6 +1605,12 @@
       };
       
       
+      document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                closeModal();
+            }
+        });
+
         // Scroll animations
         const observerOptions = {
             threshold: 0.1,
@@ -1663,7 +1659,6 @@
      
   
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a0e450a21a663011',t:'MTc4MTg5MDc4NQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"1954b47c125f43f8b4338b3c4f804e4f","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>
 </html>
 
@@ -1900,35 +1895,91 @@
 
         // Modal functionality
         const modal = document.getElementById('philModal');
+        const modalClose = document.getElementById('modalClose');
+        const modalCompanyName = document.getElementById('modalCompanyName');
+        const modalStage = document.getElementById('modalStage');
+        const modalBody = document.getElementById('modalBody');
 
-        function openModal(companyId, logoSrc) {
+        function openModal(companyId) {
             const company = companyData[companyId];
-            if (!company) return;
-
-            document.getElementById('philModalLogo').innerHTML = logoSrc
-                ? `<img src="${logoSrc}" />`
-                : '';
-            document.getElementById('philModalName').textContent = company.name;
-            document.getElementById('philModalBadge').textContent = company.stage;
-
-            let html = `<div class="phil-modal-field">
-                <span class="phil-modal-label">About</span>
-                <div class="phil-modal-val">${company.description}</div>
-            </div>`;
-
-            if (company.website) {
-                html += `<div class="phil-modal-field">
-                    <span class="phil-modal-label">Website</span>
-                    <div class="phil-modal-val"><a href="${company.website}" target="_blank" rel="noopener">${company.website}</a></div>
-                </div>`;
-            } else if (company.linkedin) {
-                html += `<div class="phil-modal-field">
-                    <span class="phil-modal-label">Connect</span>
-                    <div class="phil-modal-val"><a href="${company.linkedin}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:0.4rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a></div>
-                </div>`;
+            if (!company) {
+                // If no data, show basic modal
+                modalCompanyName.textContent = companyId.charAt(0).toUpperCase() + companyId.slice(1);
+                modalStage.textContent = 'Portfolio Company';
+                modalBody.innerHTML = `
+                    <div class="modal-detail-item">
+                        <div class="modal-detail-label">Status</div>
+                        <div class="modal-detail-value">Active portfolio company</div>
+                    </div>
+                `;
+            } else {
+                modalCompanyName.textContent = company.name;
+                modalStage.textContent = company.stage;
+                
+                let bodyHTML = '';
+                
+                if (company.founder) {
+                    bodyHTML += `
+                        <div class="modal-detail-item">
+                            <div class="modal-detail-label">Founder</div>
+                            <div class="modal-detail-value">${company.founder}</div>
+                        </div>
+                    `;
+                }
+                
+                if (company.website) {
+                    bodyHTML += `
+                        <div class="modal-detail-item">
+                            <div class="modal-detail-label">Website</div>
+                            <div class="modal-detail-value"><a href="${company.website}" target="_blank" rel="noopener">${company.website}</a></div>
+                        </div>
+                    `;
+                }
+                
+                // LinkedIn link
+                if (company.linkedin) {
+                    bodyHTML += `
+                        <div class="modal-detail-item">
+                            <div class="modal-detail-label">Connect</div>
+                            <div class="modal-detail-value"><a href="${company.linkedin}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:0.4rem;color:var(--color-accent-dark);text-decoration:none;font-size:0.85rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a></div>
+                        </div>
+                    `;
+                }
+                
+                if (company.sector) {
+                    bodyHTML += `
+                        <div class="modal-detail-item">
+                            <div class="modal-detail-label">Sector</div>
+                            <div class="modal-detail-value">${company.sector}</div>
+                        </div>
+                    `;
+                }
+                
+                if (company.description) {
+                    bodyHTML += `
+                        <div class="modal-detail-item">
+                            <div class="modal-detail-label">Description</div>
+                            <div class="modal-detail-value">${company.description}</div>
+                        </div>
+                    `;
+                }
+                
+                if (company.highlights && company.highlights.length > 0) {
+                    bodyHTML += `
+                        <div class="modal-detail-item">
+                            <div class="modal-detail-label">Key Highlights</div>
+                            <div class="modal-detail-value">
+                                <ul>
+                                    ${company.highlights.map(h => `<li>${h}</li>`).join('')}
+                                </ul>
+                            </div>
+                        </div>
+                    `;
+                }
+                
+                modalBody.innerHTML = bodyHTML;
             }
-
-            document.getElementById('philModalBody').innerHTML = html;
+            
             modal.classList.add('active');
             document.body.style.overflow = 'hidden';
         }
@@ -1938,16 +1989,72 @@
             document.body.style.overflow = '';
         }
 
-        document.getElementById('philModalClose').addEventListener('click', closeModal);
-        modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
-        document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modal.classList.contains('active')) closeModal(); });
+        modalClose.addEventListener('click', closeModal);
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+        });
 
-        document.querySelectorAll('.phil-item').forEach(item => {
-            item.addEventListener('click', () => {
-                const companyId = item.getAttribute('data-company-id');
-                const logoSrc = item.querySelector('img')?.src || '';
-                if (companyId) openModal(companyId, logoSrc);
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                closeModal();
+            }
+        });
+
+        // Scroll animations
+        //const observerOptions = {
+        //    threshold: 0.1,
+        //    rootMargin: '0px 0px -100px 0px'
+        //};
+        /*
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+        
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                //navbar.classList.add('scrolled');
+            } else {
+                //navbar.classList.remove('scrolled');
+            }
+        });
+        
+        // Approach card expand/collapse
+        const approachCards = document.querySelectorAll('.approach-card');
+        approachCards.forEach(card => {
+            card.addEventListener('click', () => {
+                const isExpanded = card.classList.contains('expanded');
+                
+                // Close all other cards
+                approachCards.forEach(c => {
+                    c.classList.remove('expanded');
+                });
+                
+                // Toggle clicked card
+                if (!isExpanded) {
+                    card.classList.add('expanded');
+                }
             });
         });
+       */
+        // Portfolio item clicks
+        const portfolioItems = document.querySelectorAll('.phil-item');
+        portfolioItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const companyId = item.getAttribute('data-company-id');
+                if (companyId) {
+                    openModal(companyId);
+                }
+            });
+        });
+
+
 
 </script>
