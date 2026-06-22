@@ -1093,6 +1093,9 @@
             min-height: 20vh !important;
             padding: 130px 0px 60px !important;
         }
+        @media (max-width: 768px) {
+            .inner { padding: 80px 0px 40px !important; }
+        }
         
         .inner-page .section-header {
             text-align:left !important;
@@ -1550,34 +1553,6 @@
   </div>
 </div>
 
-<!-- Portfolio Modal -->
-<div class="portfolio-modal" id="portfolioModal">
-  <div class="modal-content">
-    <button class="modal-close" id="modalClose">&times;</button>
-    <div class="modal-header">
-      <h3 class="modal-company-name" id="modalCompanyName"></h3>
-      <span class="modal-stage" id="modalStage"></span>
-    </div>
-    <div class="modal-body" id="modalBody"></div>
-  </div>
-</div>
-
-
-
-    <!-- Portfolio Modal -->
-    <div class="portfolio-modal" id="portfolioModal">
-        <div class="modal-content">
-            <button class="modal-close" id="modalClose">×</button>
-            <div class="modal-header">
-                <h3 class="modal-company-name" id="modalCompanyName"></h3>
-                <span class="modal-stage" id="modalStage"></span>
-            </div>
-            <div class="modal-body" id="modalBody">
-                <!-- Content will be dynamically inserted -->
-            </div>
-        </div>
-    </div>
-
     <!-- Footer -->
     <footer>
         <p>© 2026 Singh Capital Partners. Intelligent Capital. Enduring Impact.</p>
@@ -1649,104 +1624,6 @@
             });
         });
         
-        const teamData = {
-              "Manpreet Singh": {
-                role: "Chief Investment Officer",
-                img: "imgs/team/dark/manpreet.jpg",
-                linkedin: "https://www.linkedin.com/in/msinghcfa",
-                summary: `
-                  Manpreet Singh, CFA, is the Chief Investment Officer of Singh Capital Partners, a private investment office with a global mandate spanning venture capital, private equity, and real estate.
-                  <br /><br />
-                  Over the past decade, Singh has led more than 50 private investments across sectors including technology, healthcare, and consumer goods. Notable companies include: Alibaba (IPO – 2014), SpaceX, Uber (IPO – 2019), Spotify (Direct Listing – 2018), Anthropic, xAI, Robinhood (IPO – 2021), SoFi (Public via SPAC – 2021), PayTM (IPO – 2021), Impossible Foods, Carta, Groq, Drilling Info / Enverus (Acquired – 2018), 
-                  AlphaSense (Sentio), Cohesity, Postmates (Acquired – 2020), Mindbody (Acquired – 2019), DocSend (Acquired – 2021), Bazaarvoice (IPO – 2012; Acquired – 2018), 
-                  SocialTables (Acquired – 2018), Redesign Health, Avizia (Acquired – 2018), CAM Collective (Thrive / General Catalyst), K2 Space, LucyRx, UrbanStems, US Inspect, TrueBill (Acquired – 2021), Carbon6, DEFI Holdings, Oats Overnight, Duo, Palisades
-                  <br /><br />
-                  Singh currently serves on a range of public, private, and non-profit boards including Cemtrex (Nasdaq: CETX), Investcorp India Acquisition Corp (Nasdaq: IVCA), Continuum, Founderpath, PartsAvatar, Oats Overnight, US Inspect, Snowball Industries, Shukr Investments, Suburban Hospital (Johns Hopkins Medicine), and the Dingman Center at the Smith School of Business, University of Maryland.
-                  <br /><br />
-                  Previously, Singh was the Founder and CEO of TalkLocal, a venture-backed local services marketplace that operated in 49 U.S. states and facilitated over two million customer-contractor connections. Before founding TalkLocal, he served as the first and longest-tenured investor at Profit Investment Management, a Washington, D.C. based firm that grew its assets under management from $20 million to over $2 billion during his tenure.
-                  <br /><br />
-                  Singh earned his MBA from the Wharton School of Business, where he specialized in Entrepreneurship, Finance, and Real Estate. He also holds a B.S. in Finance with a citation in Entrepreneurship from the University of Maryland, College Park, and is a Chartered Financial Analyst (CFA) charterholder. In 2006, he became one of the youngest CFA charterholders in the world and was profiled by the organization as its “Most Ambitious” member.
-                  `
-                },
-                "Chanmeet Narang": {
-                  role: "Chief Of Staff",
-                  img: "imgs/team/dark/chanmeet.jpg",
-                  linkedin: "https://www.linkedin.com/in/chanmeet",
-                  summary: `
-                  Chanmeet S. Narang is the Chief of Staff at Singh Capital Partners, based in New York City, where he supports the Chief Investment Officer across all investment decisions.
-                  <br /><br />
-                  Prior to joining Singh Capital, Narang worked on the Investment Banking team at B. Riley FBR (NYSE: RILY), the Investment Management team at AllianceBernstein (NYSE: EQH), and the Financial Services team at AlphaSense, an AI technology business backed by Viking Global, BDT & MSD Partners, SoftBank Vision Fund, Goldman Sachs Asset Management, and Innovation Endeavors. Chanmeet is also the Co-Founder of Tennis Social AI, venture backed simulator and smart court technology designed to train recreational beginners to professional athletes.
-                   <br /><br />
-                  Before his career in New York, Chanmeet served at the White House in Washington D.C., as part of President Trump’s first administration on the Advance Team. He also held roles as a Congressional Intern for Senator David Perdue on the Senate Committee on Banking, Housing, and Urban Affairs, a Summer Associate at Wheels Up (NYSE: DAL), and a Summer Legislative Analyst at SALDEF.
-                  <br /><br />
-                  Following graduation, he continued his involvement in collegiate athletics as the Assistant Tennis Coach at New York University, helping the team achieve the best season in school history and earning recognition as UAA Conference Coach of the Year. During his time with NYU Tennis, Narang also served as the Head Tennis Professional at the Bridge Golf Club in Bridgehampton and as a Production Contributor and the “Network Enthusiast” for Sports Talk Live, Amazon Prime Video Sport’s 24/7 live sports show. Chanmeet also founded the NCAA Tennis Alumni Network that includes over 600 active members across 13 chapters. 
-                  <br /><br />
-                  Chanmeet earned his B.B.A. in Risk Management from the University of Georgia’s Terry College of Business, where he served as Manager of the NCAA No. 1–ranked Men’s Tennis Program. During his tenure, Georgia captured four SEC titles, made two NCAA Division I Championship semifinal appearances, and maintained an ITA and NCAA top-10 national ranking each season.
-      
-                  `
-                },
-                "Nicholas Ricciardella": {
-                  role: "Vice President",
-                  img: "imgs/team/dark/nic.jpg",
-                  linkedin: "https://www.linkedin.com/in/nicholas-ricciardella-47800296",
-                  summary: `
-                          Nick Ricciardella is a Vice President at Singh Capital, based in Chicago, where he leads the deal process across venture capital, private equity, and real estate investments.
-                          <br /><br />
-                          Before joining Singh Capital, Nick was with Crestone Capital, a multi-family office providing entrepreneurial founders with access to top-tier venture capital and private equity opportunities through its diversified access vehicles. At Crestone, he focused on manager selection and portfolio management across the Montezuma and Maroon funds. Earlier in his career, Nick worked at Dresner Partners, a Chicago-based investment bank, where he supported the firm’s M&A advisory team.
-                          <br /><br />
-                          Nick serves on the boards of Beagle Services and Continuum Venture Partners. He earned a B.A. in Finance with Honors and a minor in Accounting from DePaul University in 2019, and is currently a CFA Level II candidate.
-                          <br /><br />
-                          `
-                },
-                "Simran Chowdhary": {
-                  role: "Senior Associate",
-                  img: "imgs/team/dark/simar.jpg",
-                  linkedin: "https://www.linkedin.com/in/simranchowdhary",
-                  summary: `
-                       Simran Chowdhary is a Senior Associate at Singh Capital, based in Chicago, where he focuses on venture capital, private equity, and real estate investments.
-                       <br /><br />
-                       Before joining Singh Capital in 2021, Simran worked at Fifth Third Bank (NASDAQ: FITB), one of the largest commercial banking institutions in the United States. During his tenure, he supported both the Diversified Industries and National Healthcare verticals, working across the Credit Underwriting and Corporate Finance divisions.
-                       <br /><br />
-                       Simran earned his B.A. in Finance and completed the Banking & Capital Markets program at DePaul University in 2019.
-                       <br /><br />
-                       `
-                },
-                "Caroline Lampl": {
-                  role: "Senior Associate",
-                  img: "imgs/team/dark/caroline.jpg",
-                  linkedin: "https://www.linkedin.com/in/caroline-lampl-534165116",
-                  summary: `
-                        Caroline Lampl is a Senior Associate at Singh Capital, based in Chicago, where she focuses on venture capital, private equity, and real estate investments.
-                        <br><br>
-
-                        Prior to joining Singh Capital, Caroline pursued a career in professional tennis, achieving a career-high world ranking of 650. Following her athletic career, she worked at Morgan Stanley Investment Management before beginning her venture capital journey at Franklin Templeton, where she was part of the firm’s private investing division.
-                        <br><br>
-                        
-                        Caroline earned her B.S. in Science, Technology & Society from Stanford University, where she was a four-year starter in both singles and doubles and served as Captain of the NCAA Division I Varsity Women’s Tennis Team during her junior and senior years. During her time at Stanford, she helped lead the team to three NCAA National Championships, earned All–Pac-12 First Team and NCAA All-Tournament Team honors, received multiple Pac-12 Player of the Week awards, and was named Stanford’s Most Competitive Athlete her senior year. She was also recognized as a Pac-12 All-Academic Honorable Mention all four years. Outside athletics, Caroline was a member of Smart Woman Securities, a national organization promoting financial literacy for women on college campuses.
-	                    <br><br>
-                  `
-                },
-                "Kemen Linsuain": {
-                  role: "Senior Associate",
-                  img: "imgs/team/dark/kemen.jpg",
-                  linkedin: "https://www.linkedin.com/in/kemen-linsuain",
-                  summary: `
-                        Kemen Linsuain is an Associate at Singh Capital, based in Washington, D.C., where he focuses on venture capital, private equity, and real estate investments.
-                        <br /><br />
-                        Before joining Singh Capital in 2024, Kemen was the first full-time marketing hire at Gauntlet, a blockchain market research startup backed by Ribbit Capital, Polychain Capital, and Paradigm. Earlier, he served as an Investment Analyst at Capital Guidance, an international family office that owns and operates a portfolio of businesses, including Madison Marquette, a $3 billion diversified real estate firm. Prior to that, he worked as an Investment Analyst at Dean Capital Investments, a Washington, D.C.–based family office, where he focused on liquid credit investments in the industrials and consumer sectors.
-                        <br /><br />
-                        Kemen earned his B.A. in Physics and Mathematics from Harvard College. While at Harvard, he conducted research with the Philip Kim Group on the electrical and physical properties of graphene, a project supported by the Semiconductor Research Corporation and DARPA. He also co-authored a paper in the Illinois Journal of Mathematics that proved several previously unknown results in the geometry of high-dimensional hyperbolic spaces.
-                      `
-        }
-      };
-      
-      
-      document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && modal.classList.contains('active')) {
-                closeModal();
-            }
-        });
-
         // Scroll animations
         const observerOptions = {
             threshold: 0.1,
@@ -1795,10 +1672,8 @@
      
   
     </script>
-</body>
-</html>
 
-<script>
+    <script>
 const careerModal     = document.getElementById("careerModal");
 const openCareerModal = document.getElementById("openCareerModal");
 const closeCareerModal= document.getElementById("closeCareerModal");
@@ -1857,4 +1732,6 @@ if (careerForm) {
     submitBtn.innerHTML = "Submit Application";
   });
 }
-</script>
+    </script>
+</body>
+</html>
