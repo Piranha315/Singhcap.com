@@ -402,7 +402,7 @@
 
   <!-- Slide 1 -->
   <div class="carousel-slide active" data-index="0">
-    <video class="slide-bg" autoplay muted playsinline src="Rocket_Landing.mp4"></video>
+    <video class="slide-bg" autoplay muted playsinline src="Rocket_Landing.mp4" poster="space.jpg"></video>
     <div class="slide-overlay"></div><div class="slide-grain"></div>
     <div class="slide-content">
       <span class="slide-eyebrow">Singh Capital Partners</span>
@@ -419,7 +419,7 @@
 
   <!-- Slide 2 -->
   <div class="carousel-slide" data-index="1">
-    <video class="slide-bg" muted playsinline src="Data_Centers.mp4"></video>
+    <img class="slide-bg" src="Intelligence.png" alt="" />
     <div class="slide-overlay"></div><div class="slide-grain"></div>
     <div class="slide-content">
       <span class="slide-eyebrow">Singh Capital Partners</span>
@@ -436,7 +436,24 @@
 
   <!-- Slide 3 -->
   <div class="carousel-slide" data-index="2">
-    <video class="slide-bg" muted playsinline src="America.mp4"></video>
+    <video class="slide-bg" muted playsinline src="Real Estate.mp4" poster="GoldenGate.jpg"></video>
+    <div class="slide-overlay"></div><div class="slide-grain"></div>
+    <div class="slide-content">
+      <span class="slide-eyebrow">Singh Capital Partners</span>
+      <div class="slide-tagline">
+        <div class="tagline-line1">
+          <img class="tagline-c-img" src="imgs/lion-c.png" alt="" />
+          <span class="tagline-rest">reate</span>
+        </div>
+        <em class="tagline-line2">A Space</em>
+      </div>
+      <a href="#" class="slide-learn-more">Learn More <svg class="lm-arrow" width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
+  </div>
+
+  <!-- Slide 4 -->
+  <div class="carousel-slide" data-index="3">
+    <video class="slide-bg" muted playsinline src="America.mp4" poster="ManhattanHenge.jpg"></video>
     <div class="slide-overlay"></div><div class="slide-grain"></div>
     <div class="slide-content">
       <span class="slide-eyebrow">Singh Capital Partners</span>
@@ -464,6 +481,7 @@
     <button class="carousel-dot active" data-goto="0"><span class="carousel-dot-inner"></span></button>
     <button class="carousel-dot" data-goto="1"><span class="carousel-dot-inner"></span></button>
     <button class="carousel-dot" data-goto="2"><span class="carousel-dot-inner"></span></button>
+    <button class="carousel-dot" data-goto="3"><span class="carousel-dot-inner"></span></button>
   </div>
   <div class="carousel-progress"><div class="carousel-progress-fill" id="carouselProgress"></div></div>
 </div>
@@ -678,6 +696,7 @@
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   /* ── Carousel ── */
   const carouselSlides = [
+    { link: '#' },
     { link: '#' },
     { link: '#' },
     { link: '#' },
