@@ -420,8 +420,9 @@
 <nav id="nav" class="at-top">
   <div class="nav-inner">
     <ul class="nav-links-left" id="navLeft">
-      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#approach">Approach</a></li>
       <li><a href="index.html#portfolio">Portfolio</a></li>
+      <li><a href="team.html">Team</a></li>
     </ul>
 
     <a href="index.html" class="nav-logo">
@@ -431,7 +432,17 @@
     <ul class="nav-links-right" id="navRight">
       <li><a href="philanthropy.html">Philanthropy</a></li>
       <li><a href="government-affairs.html">Gov't Affairs</a></li>
-      <li><a href="#contact">Connect</a></li>
+      <li class="has-dd">
+        <a href="#">Connect
+          <svg style="display:inline;margin-left:4px;vertical-align:middle;" width="10" height="6" viewBox="0 0 10 6" fill="none">
+            <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+          </svg>
+        </a>
+        <ul class="dd">
+          <li><a href="team.html">Contact Us</a></li>
+          <li><a href="careers.html">Careers</a></li>
+        </ul>
+      </li>
     </ul>
 
     <button class="hamburger" id="hamburger" aria-label="Menu">
@@ -442,12 +453,15 @@
 
 <!-- Mobile menu -->
 <div class="mobile-menu" id="mobileMenu">
-  <a href="index.html">Home</a>
+  <a href="index.html#approach">Approach</a>
   <a href="index.html#portfolio">Portfolio</a>
+  <a href="team.html">Team</a>
   <div class="mobile-menu-divider"></div>
   <a href="philanthropy.html">Philanthropy</a>
   <a href="government-affairs.html">Gov't Affairs</a>
-  <a href="#contact">Connect</a>
+  <div class="mobile-menu-divider"></div>
+  <a href="team.html">Contact Us</a>
+  <a href="careers.html">Careers</a>
 </div>
 
 <!-- ─── Hero ─── -->
@@ -762,7 +776,7 @@
     <a href="team.html">Team</a>
     <a href="philanthropy.html">Philanthropy</a>
     <a href="government-affairs.html">Gov't Affairs</a>
-    <a href="team.html#contact">Contact</a>
+    <a href="team.html">Contact</a>
   </div>
 </footer>
 
