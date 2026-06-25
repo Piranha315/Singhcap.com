@@ -280,6 +280,33 @@
     .see-more-btn { display: inline-flex; align-items: center; gap: 0.6rem; font-family: var(--sans); font-size: 0.78rem; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; background: none; border: 1px solid var(--border); padding: 0.9rem 2.5rem; border-radius: 2px; color: var(--ink-soft); transition: border-color 0.3s, color 0.3s; }
     .see-more-btn:hover { border-color: var(--gold); color: var(--gold); }
 
+    /* ─── Biggest Winners ─── */
+    .pf-separator { display: inline-block; width: 1px; background: var(--border); margin: 0.35rem 0.75rem; align-self: stretch; }
+    .pf-btn.pf-winners { color: var(--gold-lt); }
+    .pf-btn.pf-winners:hover { color: var(--gold); }
+    .pf-btn.pf-winners.active { color: var(--gold); }
+    .pf-btn.pf-winners.active::after { background: var(--gold); width: 100%; }
+    .winners-view { display: none; margin-top: 0; }
+    .winners-view.active { display: block; }
+    .winners-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .winner-card { display: flex; flex-direction: column; text-decoration: none; overflow: hidden; transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease); }
+    .winner-card:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(0,0,0,0.18); }
+    .winner-card-img { aspect-ratio: 4/3; overflow: hidden; position: relative; }
+    .winner-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.55s var(--ease); display: block; }
+    .winner-card:hover .winner-card-img img { transform: scale(1.04); }
+    .winner-card-placeholder { width: 100%; height: 100%; background: linear-gradient(145deg, #2a2520 0%, #1a1612 100%); display: flex; align-items: center; justify-content: center; }
+    .winner-card-placeholder-label { font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.18); }
+    .winner-card-body { background: #163829; padding: 2rem; flex: 1; display: flex; flex-direction: column; }
+    .winner-card-tag { font-size: 0.63rem; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.42); margin-bottom: 0.85rem; }
+    .winner-card-title { font-family: var(--serif); font-size: 1.15rem; font-weight: 400; color: #fff; line-height: 1.42; flex: 1; margin-bottom: 1.25rem; }
+    .winner-card-rule { height: 1px; background: rgba(255,255,255,0.13); margin-bottom: 1.25rem; }
+    .winner-card-cta { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.78rem; letter-spacing: 0.04em; color: rgba(255,255,255,0.55); transition: color 0.3s var(--ease), gap 0.3s var(--ease); }
+    .winner-card:hover .winner-card-cta { color: #fff; gap: 0.8rem; }
+    .winner-card-cta svg { flex-shrink: 0; }
+    .winners-note { margin-top: 2.5rem; font-size: 0.8rem; color: var(--ink-muted); text-align: center; }
+    @media (max-width: 1024px) { .winners-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 600px) { .winners-grid { grid-template-columns: 1fr; } }
+
     /* ─── Contact ─── */
     .contact-section { background: var(--cream-alt); }
     .contact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; margin-top: 4rem; background: var(--border); }
@@ -551,8 +578,68 @@
         <button class="pf-btn" data-filter="venture">Venture</button>
         <button class="pf-btn" data-filter="growth">Growth</button>
         <button class="pf-btn" data-filter="funds">Funds</button>
+        <span class="pf-separator" aria-hidden="true"></span>
+        <button class="pf-btn pf-winners" id="winnersTab">Biggest Winners</button>
       </div>
     </div>
+    <!-- Biggest Winners View -->
+    <div class="winners-view" id="winnersView">
+      <div class="winners-grid">
+
+        <!-- Winner Card 1 — update href, image src, tag, and title -->
+        <a class="winner-card" href="#" target="_blank" rel="noopener">
+          <div class="winner-card-img">
+            <!-- Replace div below with: <img src="winners/company1.jpg" alt="Company Name" /> -->
+            <div class="winner-card-placeholder"><span class="winner-card-placeholder-label">Add Photo</span></div>
+          </div>
+          <div class="winner-card-body">
+            <span class="winner-card-tag">Venture</span>
+            <h3 class="winner-card-title">Company Name: Title of Your Essay Goes Here</h3>
+            <div class="winner-card-rule"></div>
+            <span class="winner-card-cta">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8l4 4-4 4M8 12h8"/></svg>
+              Read Essay
+            </span>
+          </div>
+        </a>
+
+        <!-- Winner Card 2 — update href, image src, tag, and title -->
+        <a class="winner-card" href="#" target="_blank" rel="noopener">
+          <div class="winner-card-img">
+            <!-- Replace div below with: <img src="winners/company2.jpg" alt="Company Name" /> -->
+            <div class="winner-card-placeholder"><span class="winner-card-placeholder-label">Add Photo</span></div>
+          </div>
+          <div class="winner-card-body">
+            <span class="winner-card-tag">Growth</span>
+            <h3 class="winner-card-title">Company Name: Title of Your Essay Goes Here</h3>
+            <div class="winner-card-rule"></div>
+            <span class="winner-card-cta">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8l4 4-4 4M8 12h8"/></svg>
+              Read Essay
+            </span>
+          </div>
+        </a>
+
+        <!-- Winner Card 3 — update href, image src, tag, and title -->
+        <a class="winner-card" href="#" target="_blank" rel="noopener">
+          <div class="winner-card-img">
+            <!-- Replace div below with: <img src="winners/company3.jpg" alt="Company Name" /> -->
+            <div class="winner-card-placeholder"><span class="winner-card-placeholder-label">Add Photo</span></div>
+          </div>
+          <div class="winner-card-body">
+            <span class="winner-card-tag">Growth</span>
+            <h3 class="winner-card-title">Company Name: Title of Your Essay Goes Here</h3>
+            <div class="winner-card-rule"></div>
+            <span class="winner-card-cta">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8l4 4-4 4M8 12h8"/></svg>
+              Read Essay
+            </span>
+          </div>
+        </a>
+
+      </div>
+    </div><!-- /.winners-view -->
+
     <div class="portfolio-grid-wrap collapsed" id="portfolioGridWrap">
     <div class="portfolio-grid reveal" id="portfolioGrid">
       <!-- Venture -->
@@ -764,11 +851,28 @@
   });
 
   /* ── Portfolio filter ── */
+  const winnersView = document.getElementById('winnersView');
+  const portfolioGridWrap = document.getElementById('portfolioGridWrap');
+  const seeMoreWrap = document.getElementById('seeMoreWrap');
+
   document.querySelectorAll('.pf-btn').forEach(btn => {
     btn.addEventListener('click', () => {
-      document.querySelectorAll('.pf-btn').forEach(b => b.classList.remove('active')); btn.classList.add('active');
-      const f = btn.dataset.filter;
-      document.querySelectorAll('.portfolio-item').forEach(item => item.classList.toggle('hidden', f !== 'all' && item.dataset.category !== f));
+      document.querySelectorAll('.pf-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      if (btn.id === 'winnersTab') {
+        winnersView.classList.add('active');
+        portfolioGridWrap.style.display = 'none';
+        seeMoreWrap.style.display = 'none';
+      } else {
+        winnersView.classList.remove('active');
+        portfolioGridWrap.style.display = '';
+        seeMoreWrap.style.display = '';
+        const f = btn.dataset.filter;
+        document.querySelectorAll('.portfolio-item').forEach(item =>
+          item.classList.toggle('hidden', f !== 'all' && item.dataset.category !== f)
+        );
+      }
     });
   });
 
