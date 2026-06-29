@@ -10,6 +10,7 @@
     <link rel="icon" type="image/x-icon" href="imgs/favicon.png">
   <meta property="og:image" content="https://singhcap.com/imgs/single_logo.png" />
     
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jacques+Francois&family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
@@ -34,7 +35,15 @@
         }
       }
     </script>
-    <style> html { scroll-behavior: smooth; } </style>
+        <style> html { scroll-behavior: smooth; } </style>
+    <style>
+        .phil-grid { display: grid; grid-template-columns: 1fr; list-style: none; margin: 0; padding: 0; }
+        @media (min-width: 640px) { .phil-grid { grid-template-columns: repeat(3, 1fr); } }
+        @media (min-width: 1024px) { .phil-grid { grid-template-columns: repeat(4, 1fr); } }
+        .phil-card-inner { display: flex; flex-direction: column; align-items: center; justify-content: flex-start; padding: 1rem; background: #fff; border: 1px solid #D1D5DB; cursor: pointer; transition: all 0.3s; height: 140px; }
+        .phil-img-wrap { display: flex; align-items: center; justify-content: center; margin: 0 auto; height: 100px; }
+        .phil-img-wrap img { max-width: 100%; max-height: 100%; object-fit: contain; }
+    </style>
     
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -413,13 +422,13 @@
             <p class="section-description">A values-driven approach to advancing meaningful impact</p>
         </div>
 
-        <ul class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4">
+        <ul class="phil-grid">
 
             <li>
-              <div class="block h-full phil-item" data-category="Hospital" data-company-id="cnh">
-                <div class="flex flex-col items-center justify-start p-4 bg-white border border-gray-300 cursor-pointer transition-all duration-300" style="height:230px;">
-                  <div class="flex items-center justify-center mx-auto" style="height:120px;">
-                    <img src="phil-logos/child.jpg" class="max-w-full max-h-full object-contain" style="max-width:120px;max-height:100px;" />
+              <div class="phil-item" data-category="Hospital" data-company-id="cnh">
+                <div class="phil-card-inner">
+                  <div class="phil-img-wrap">
+                    <img loading="lazy" src="phil-logos/child.jpg" style="max-width:120px;max-height:100px;" />
                   </div>
                   <p class="phil-brief">The leading pediatric health system in the Washington, D.C. area.</p>
                 </div>
@@ -427,10 +436,10 @@
             </li>
 
             <li>
-              <div class="block h-full phil-item" data-category="Hospital" data-company-id="dasvand">
-                <div class="flex flex-col items-center justify-start p-4 bg-white border border-gray-300 cursor-pointer transition-all duration-300" style="height:230px;">
-                  <div class="flex items-center justify-center mx-auto" style="height:120px;">
-                    <img src="phil-logos/dvn_logo.webp" class="max-w-full max-h-full object-contain" style="max-width:140px;max-height:100px;" />
+              <div class="phil-item" data-category="Hospital" data-company-id="dasvand">
+                <div class="phil-card-inner">
+                  <div class="phil-img-wrap">
+                    <img loading="lazy" src="phil-logos/dvn_logo.webp" style="max-width:140px;max-height:100px;" />
                   </div>
                   <p class="phil-brief">An online giving platform rooted in the Sikh spirit of sharing one's earnings for the betterment of society.</p>
                 </div>
@@ -438,10 +447,10 @@
             </li>
 
             <li>
-              <div class="block h-full phil-item" data-category="Nonprofit" data-company-id="globalsikh">
-                <div class="flex flex-col items-center justify-start p-4 bg-white border border-gray-300 cursor-pointer transition-all duration-300" style="height:230px;">
-                  <div class="flex items-center justify-center mx-auto" style="height:120px;">
-                    <img src="phil-logos/sikh-global.jpg" class="max-w-full max-h-full object-contain" style="max-width:100px;max-height:100px;" />
+              <div class="phil-item" data-category="Nonprofit" data-company-id="globalsikh">
+                <div class="phil-card-inner">
+                  <div class="phil-img-wrap">
+                    <img loading="lazy" src="phil-logos/sikh-global.jpg" style="max-width:100px;max-height:100px;" />
                   </div>
                   <p class="phil-brief">Representing Sikhs and Sikh institutions to governmental and non-governmental entities worldwide.</p>
                 </div>
@@ -449,10 +458,10 @@
             </li>
 
             <li>
-              <div class="block h-full phil-item" data-category="Nonprofit" data-company-id="herhealth">
-                <div class="flex flex-col items-center justify-start p-4 bg-white border border-gray-300 cursor-pointer transition-all duration-300" style="height:230px;">
-                  <div class="flex items-center justify-center mx-auto" style="height:120px;">
-                    <img src="phil-logos/health-logo.webp" class="max-w-full max-h-full object-contain" style="max-width:160px;max-height:100px;" />
+              <div class="phil-item" data-category="Nonprofit" data-company-id="herhealth">
+                <div class="phil-card-inner">
+                  <div class="phil-img-wrap">
+                    <img loading="lazy" src="phil-logos/health-logo.webp" style="max-width:160px;max-height:100px;" />
                   </div>
                   <p class="phil-brief">Expanding access to medical devices in developing countries for an equitable standard of women's care.</p>
                 </div>
@@ -460,10 +469,10 @@
             </li>
 
             <li>
-              <div class="block h-full phil-item" data-category="Nonprofit" data-company-id="khalsaaid">
-                <div class="flex flex-col items-center justify-start p-4 bg-white border border-gray-300 cursor-pointer transition-all duration-300" style="height:230px;">
-                  <div class="flex items-center justify-center mx-auto" style="height:120px;">
-                    <img src="phil-logos/khalsa-aid.png" class="max-w-full max-h-full object-contain" style="max-width:120px;max-height:100px;" />
+              <div class="phil-item" data-category="Nonprofit" data-company-id="khalsaaid">
+                <div class="phil-card-inner">
+                  <div class="phil-img-wrap">
+                    <img loading="lazy" src="phil-logos/khalsa-aid.png" style="max-width:120px;max-height:100px;" />
                   </div>
                   <p class="phil-brief">Providing humanitarian aid worldwide, regardless of race, religion, faith, or nationality.</p>
                 </div>
@@ -471,10 +480,10 @@
             </li>
 
             <li>
-              <div class="block h-full phil-item" data-category="Nonprofit" data-company-id="milken">
-                <div class="flex flex-col items-center justify-start p-4 bg-white border border-gray-300 cursor-pointer transition-all duration-300" style="height:230px;">
-                  <div class="flex items-center justify-center mx-auto" style="height:120px;">
-                    <img src="imgs/MilkenInst.png" class="max-w-full max-h-full object-contain" style="max-width:150px;max-height:80px;" />
+              <div class="phil-item" data-category="Nonprofit" data-company-id="milken">
+                <div class="phil-card-inner">
+                  <div class="phil-img-wrap">
+                    <img loading="lazy" src="imgs/MilkenInst.png" style="max-width:150px;max-height:80px;" />
                   </div>
                   <p class="phil-brief">Connecting human, financial, and educational resources to catalyze practical solutions to global challenges.</p>
                 </div>
@@ -482,10 +491,10 @@
             </li>
 
             <li>
-              <div class="block h-full phil-item" data-category="Nonprofit" data-company-id="tennis">
-                <div class="flex flex-col items-center justify-start p-4 bg-white border border-gray-300 cursor-pointer transition-all duration-300" style="height:230px;">
-                  <div class="flex items-center justify-center mx-auto" style="height:120px;">
-                    <img src="phil-logos/tennis.png" class="object-contain" style="max-width:80px;max-height:80px;filter:brightness(0);" />
+              <div class="phil-item" data-category="Nonprofit" data-company-id="tennis">
+                <div class="phil-card-inner">
+                  <div class="phil-img-wrap">
+                    <img loading="lazy" src="phil-logos/tennis.png" style="max-width:80px;max-height:80px;filter:brightness(0);" />
                   </div>
                   <p class="phil-brief">Developing young people's character through tennis and education for a lifetime of success.</p>
                 </div>
@@ -493,10 +502,10 @@
             </li>
 
             <li>
-              <div class="block h-full phil-item" data-category="Nonprofit" data-company-id="prostate">
-                <div class="flex flex-col items-center justify-start p-4 bg-white border border-gray-300 cursor-pointer transition-all duration-300" style="height:230px;">
-                  <div class="flex items-center justify-center mx-auto" style="height:120px;">
-                    <img src="phil-logos/prostate.png" class="max-w-full max-h-full object-contain" style="max-width:140px;max-height:100px;" />
+              <div class="phil-item" data-category="Nonprofit" data-company-id="prostate">
+                <div class="phil-card-inner">
+                  <div class="phil-img-wrap">
+                    <img loading="lazy" src="phil-logos/prostate.png" style="max-width:140px;max-height:100px;" />
                   </div>
                   <p class="phil-brief">Funding research to end death and suffering from prostate cancer since 1993.</p>
                 </div>
@@ -504,10 +513,10 @@
             </li>
 
             <li>
-              <div class="block h-full phil-item" data-category="Nonprofit" data-company-id="round">
-                <div class="flex flex-col items-center justify-start p-4 bg-white border border-gray-300 cursor-pointer transition-all duration-300" style="height:230px;">
-                  <div class="flex items-center justify-center mx-auto" style="height:120px;">
-                    <img src="phil-logos/round-glass.png" class="max-w-full max-h-full object-contain" style="max-width:140px;max-height:100px;" />
+              <div class="phil-item" data-category="Nonprofit" data-company-id="round">
+                <div class="phil-card-inner">
+                  <div class="phil-img-wrap">
+                    <img loading="lazy" src="phil-logos/round-glass.png" style="max-width:140px;max-height:100px;" />
                   </div>
                   <p class="phil-brief">Reimagining rural Punjab through forest restoration, learning spaces, and women's empowerment.</p>
                 </div>
@@ -515,10 +524,10 @@
             </li>
 
             <li>
-              <div class="block h-full phil-item" data-category="Nonprofit" data-company-id="sal">
-                <div class="flex flex-col items-center justify-start p-4 bg-white border border-gray-300 cursor-pointer transition-all duration-300" style="height:230px;">
-                  <div class="flex items-center justify-center mx-auto" style="height:120px;">
-                    <img src="phil-logos/sal.svg" class="object-contain" style="max-width:120px;max-height:80px;" />
+              <div class="phil-item" data-category="Nonprofit" data-company-id="sal">
+                <div class="phil-card-inner">
+                  <div class="phil-img-wrap">
+                    <img loading="lazy" src="phil-logos/sal.svg" style="max-width:120px;max-height:80px;" />
                   </div>
                   <p class="phil-brief">The nation's oldest Sikh organization, building leadership in the Sikh American community.</p>
                 </div>
@@ -526,10 +535,10 @@
             </li>
 
             <li>
-              <div class="block h-full phil-item" data-category="Nonprofit" data-company-id="sevatruck">
-                <div class="flex flex-col items-center justify-start p-4 bg-white border border-gray-300 cursor-pointer transition-all duration-300" style="height:230px;">
-                  <div class="flex items-center justify-center mx-auto" style="height:120px;">
-                    <img src="phil-logos/SevaTruck-Logo.png" class="max-w-full max-h-full object-contain" style="max-width:140px;max-height:100px;" />
+              <div class="phil-item" data-category="Nonprofit" data-company-id="sevatruck">
+                <div class="phil-card-inner">
+                  <div class="phil-img-wrap">
+                    <img loading="lazy" src="phil-logos/SevaTruck-Logo.png" style="max-width:140px;max-height:100px;" />
                   </div>
                   <p class="phil-brief">Delivering warm vegetarian meals to students at Title I schools across the DMV area.</p>
                 </div>
@@ -537,10 +546,10 @@
             </li>
 
             <li>
-              <div class="block h-full phil-item" data-category="Nonprofit" data-company-id="sikhcoal">
-                <div class="flex flex-col items-center justify-start p-4 bg-white border border-gray-300 cursor-pointer transition-all duration-300" style="height:230px;">
-                  <div class="flex items-center justify-center mx-auto" style="height:120px;">
-                    <img src="phil-logos/sikhcoal.png" class="max-w-full max-h-full object-contain" style="max-width:140px;max-height:100px;" />
+              <div class="phil-item" data-category="Nonprofit" data-company-id="sikhcoal">
+                <div class="phil-card-inner">
+                  <div class="phil-img-wrap">
+                    <img loading="lazy" src="phil-logos/sikhcoal.png" style="max-width:140px;max-height:100px;" />
                   </div>
                   <p class="phil-brief">Advancing Sikh American rights through advocacy in communities, classrooms, and Congress.</p>
                 </div>
@@ -548,10 +557,10 @@
             </li>
 
             <li>
-              <div class="block h-full phil-item" data-category="Nonprofit" data-company-id="road">
-                <div class="flex flex-col items-center justify-start p-4 bg-white border border-gray-300 cursor-pointer transition-all duration-300" style="height:230px;">
-                  <div class="flex items-center justify-center mx-auto" style="height:120px;">
-                    <img src="phil-logos/road.jpg" class="max-w-full max-h-full object-contain" style="max-width:110px;max-height:100px;" />
+              <div class="phil-item" data-category="Nonprofit" data-company-id="road">
+                <div class="phil-card-inner">
+                  <div class="phil-img-wrap">
+                    <img loading="lazy" src="phil-logos/road.jpg" style="max-width:110px;max-height:100px;" />
                   </div>
                   <p class="phil-brief">Connecting people with the teachings of Sikhi and strengthening bonds across the global Sikh community.</p>
                 </div>
@@ -559,10 +568,10 @@
             </li>
 
             <li>
-              <div class="block h-full phil-item" data-category="Nonprofit" data-company-id="space">
-                <div class="flex flex-col items-center justify-start p-4 bg-white border border-gray-300 cursor-pointer transition-all duration-300" style="height:230px;">
-                  <div class="flex items-center justify-center mx-auto" style="height:120px;">
-                    <img src="phil-logos/space.jpg" class="max-w-full max-h-full object-contain" style="max-width:140px;max-height:100px;" />
+              <div class="phil-item" data-category="Nonprofit" data-company-id="space">
+                <div class="phil-card-inner">
+                  <div class="phil-img-wrap">
+                    <img loading="lazy" src="phil-logos/space.jpg" style="max-width:140px;max-height:100px;" />
                   </div>
                   <p class="phil-brief">Collecting and exhibiting artifacts of historical significance related to U.S. Space Force heritage.</p>
                 </div>
